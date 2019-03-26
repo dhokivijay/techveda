@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<signal.h>
-
+//commnet
 void func(int i)
 {
 printf("the signal %d\n",i);
