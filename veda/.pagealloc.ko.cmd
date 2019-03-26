@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/veda/pagealloc.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/veda/pagealloc.ko /home/dhokivij/veda/pagealloc.o /home/dhokivij/veda/pagealloc.mod.o ;  true

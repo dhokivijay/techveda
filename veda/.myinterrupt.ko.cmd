@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/veda/myinterrupt.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/veda/myinterrupt.ko /home/dhokivij/veda/myinterrupt.o /home/dhokivij/veda/myinterrupt.mod.o ;  true

@@ -1,0 +1,4 @@
+kernel//home/dhokivij/veda/myhello.ko
+kernel//home/dhokivij/veda/pagealloc.ko
+kernel//home/dhokivij/veda/myinterrupt.ko
+kernel//home/dhokivij/veda/tasklet.ko
