@@ -1,0 +1,178 @@
+Inputskel Notes
+---------------
+
+First it has to include the <linux/input.h> file, which interfaces to the
+input subsystem. This provides all the definitions needed.
+
+In the _init function, which is called either upon module load or when
+booting the kernel, it grabs the required resources (it should also check
+for the presence of the device).
+
+Then it allocates a new input device structure with input_allocate_device()
+and sets up input bitfields. This way the device driver tells the other
+parts of the input systems what it is - what events can be generated or
+accepted by this input device. Our example device can only generate EV_KEY
+type events, and from those only BTN_0 event code. Thus we only set these
+two bits. We could have used
+
+	set_bit(EV_KEY, button_dev.evbit);
+	set_bit(BTN_0, button_dev.keybit);
+
+as well, but with more than single bits the first approach tends to be
+shorter.
+
+Then the example driver registers the input device structure by calling
+
+	input_register_device(&button_dev);
+
+This adds the button_dev structure to linked lists of the input driver and
+calls device handler modules _connect functions to tell them a new input
+device has appeared. input_register_device() may sleep and therefore must
+not be called from an interrupt or with a spinlock held.
+
+While in use, the only used function of the driver is
+
+	button_interrupt()
+
+which upon every interrupt from the button checks its state and reports it
+via the
+
+	input_report_key()
+
+call to the input system. There is no need to check whether the interrupt
+routine isn't reporting two same value events (press, press for example) to
+the input system, because the input_report_* functions check that
+themselves.
+
+Then there is the
+
+	input_sync()
+
+call to tell those who receive the events that we've sent a complete report.
+This doesn't seem important in the one button case, but is quite important
+for example mouse movement, where you don't want the X and Y values
+to be interpreted separately, because that'd result in a different movement.
+
+dev->open() and dev->close()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In case the driver has to repeatedly poll the device, because it doesn't
+have an interrupt coming from it and the polling is too expensive to be done
+all the time, or if the device uses a valuable resource (eg. interrupt), it
+can use the open and close callback to know when it can stop polling or
+release the interrupt and when it must resume polling or grab the interrupt
+again. To do that, we would add this to our example driver:
+
+static int button_open(struct input_dev *dev)
+{
+	if (request_irq(BUTTON_IRQ, button_interrupt, 0, "button", NULL)) {
+                printk(KERN_ERR "button.c: Can't allocate irq %d\n", button_irq);
+                return -EBUSY;
+        }
+
+        return 0;
+}
+
+static void button_close(struct input_dev *dev)
+{
+        free_irq(IRQ_AMIGA_VERTB, button_interrupt);
+}
+
+static int __init button_init(void)
+{
+	...
+	button_dev->open = button_open;
+	button_dev->close = button_close;
+	...
+}
+
+Note that input core keeps track of number of users for the device and
+makes sure that dev->open() is called only when the first user connects
+to the device and that dev->close() is called when the very last user
+disconnects. Calls to both callbacks are serialized.
+
+The open() callback should return a 0 in case of success or any nonzero value
+in case of failure. The close() callback (which is void) must always succeed.
+
+Basic event types
+~~~~~~~~~~~~~~~~~~~~~
+
+The most simple event type is EV_KEY, which is used for keys and buttons.
+It's reported to the input system via:
+
+	input_report_key(struct input_dev *dev, int code, int value)
+
+See linux/input.h for the allowable values of code (from 0 to KEY_MAX).
+Value is interpreted as a truth value, ie any nonzero value means key
+pressed, zero value means key released. The input code generates events only
+in case the value is different from before.
+
+In addition to EV_KEY, there are two more basic event types: EV_REL and
+EV_ABS. They are used for relative and absolute values supplied by the
+device. A relative value may be for example a mouse movement in the X axis.
+The mouse reports it as a relative difference from the last position,
+because it doesn't have any absolute coordinate system to work in. Absolute
+events are namely for joysticks and digitizers - devices that do work in an
+absolute coordinate systems.
+
+
+BITS_TO_LONGS(), BIT_WORD(), BIT_MASK()
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These three macros from bitops.h help some bitfield computations:
+
+	BITS_TO_LONGS(x) - returns the length of a bitfield array in longs for
+			   x bits
+	BIT_WORD(x)	 - returns the index in the array in longs for bit x
+	BIT_MASK(x)	 - returns the index in a long for bit x
+
+
+The keycode, keycodemax, keycodesize fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These three fields should be used by input devices that have dense keymaps.
+The keycode is an array used to map from scancodes to input system keycodes.
+The keycode max should contain the size of the array and keycodesize the
+size of each entry in it (in bytes).
+
+Userspace can query and alter current scancode to keycode mappings using
+EVIOCGKEYCODE and EVIOCSKEYCODE ioctls on corresponding evdev interface.
+When a device has all 3 aforementioned fields filled in, the driver may
+rely on kernel's default implementation of setting and querying keycode
+mappings.
+
+Key autorepeat
+~~~~~~~~~~~~~~~~~~
+
+... is simple. It is handled by the input.c module. Hardware autorepeat is
+not used, because it's not present in many devices and even where it is
+present, it is broken sometimes (at keyboards: Toshiba notebooks). To enable
+autorepeat for your device, just set EV_REP in dev->evbit. All will be
+handled by the input system.
+
+Other event types, handling output events
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The other event types up to now are:
+
+EV_LED - used for the keyboard LEDs.
+EV_SND - used for keyboard beeps.
+
+They are very similar to for example key events, but they go in the other
+direction - from the system to the input device driver. If your input device
+driver can handle these events, it has to set the respective bits in evbit,
+*and* also the callback routine:
+
+	button_dev->event = button_event;
+
+int button_event(struct input_dev *dev, unsigned int type, unsigned int code, int value);
+{
+	if (type == EV_SND && code == SND_BELL) {
+		outb(value, BUTTON_BELL);
+		return 0;
+	}
+	return -1;
+}
+
+This callback routine can be called from an interrupt or a BH (although that
+isn't a rule), and thus must not sleep, and must not take too long to finish.

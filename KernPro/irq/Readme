@@ -1,0 +1,19 @@
+isr routine for processing ingress packet interrupts
+
+isr()
+{
+    step 1: Allocate buffer(nft)
+    step 2: move packet from controller descriptors to driver buffer(nft)
+    step 3: processing physical header(ft)
+    step 4: queue packet for upper layers(DLL)(ft)
+}
+
+packet recvd -->interrupt---> irq_line disabled---> isr ---> irq_line enabled 	
+
+1. Ensure isr is fixed time routine 
+2. process packets in poll mode
+3. Expand hardware buffers
+	- using DMA buffers
+	- Change adapter
+
+

@@ -1,0 +1,104 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+SHARED_IRQ	inttest.c	5;"	d	file:
+SHARED_IRQ	inttest1.c	5;"	d	file:
+SHARED_IRQ	intthread.c	5;"	d	file:
+SHARED_IRQ	tasklet_ex2.c	6;"	d	file:
+SHARED_IRQ	tasklet_ex3.c	7;"	d	file:
+SHARED_IRQ	tasklet_ex4.c	7;"	d	file:
+SHARED_IRQ	tasklet_ex5.c	8;"	d	file:
+SHARED_IRQ	tbh.c	8;"	d	file:
+catchup	tasklet_ex4.c	/^static atomic_t catchup;	\/* number of 'missed events' *\/$/;"	v	file:
+cond	tbh.c	/^static atomic_t cond;$/;"	v	file:
+counter_bh	tasklet_ex3.c	/^static atomic_t counter_bh, counter_th;$/;"	v	file:
+counter_bh	tasklet_ex4.c	/^static atomic_t counter_bh, counter_th;$/;"	v	file:
+counter_bh	tasklet_ex5.c	/^static atomic_t counter_bh, counter_th;$/;"	v	file:
+counter_th	tasklet_ex3.c	/^static atomic_t counter_bh, counter_th;$/;"	v	file:
+counter_th	tasklet_ex4.c	/^static atomic_t counter_bh, counter_th;$/;"	v	file:
+counter_th	tasklet_ex5.c	/^static atomic_t counter_bh, counter_th;$/;"	v	file:
+delay	tasklet_ex3.c	/^static int delay = 0;$/;"	v	file:
+delay	tasklet_ex4.c	/^static int delay = 0;$/;"	v	file:
+delay	tasklet_ex5.c	/^static int delay = 0;$/;"	v	file:
+i	inttest1.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0, i = 0;$/;"	v	file:
+i	tasklet_ex.c	/^	int i;$/;"	m	struct:simp	file:
+irq	inttest.c	/^static int irq = SHARED_IRQ, my_dev_id = 1, irq_counter = 0;$/;"	v	file:
+irq	inttest1.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0, i = 0;$/;"	v	file:
+irq	intthread.c	/^static int irq = SHARED_IRQ, my_dev_id = 1, irq_counter = 0;$/;"	v	file:
+irq	tasklet_ex2.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0;$/;"	v	file:
+irq	tasklet_ex3.c	/^static int irq = SHARED_IRQ, my_dev_id;$/;"	v	file:
+irq	tasklet_ex4.c	/^static int irq = SHARED_IRQ, my_dev_id;$/;"	v	file:
+irq	tasklet_ex5.c	/^static int irq = SHARED_IRQ, my_dev_id;$/;"	v	file:
+irq	tbh.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0;$/;"	v	file:
+irq_counter	inttest.c	/^static int irq = SHARED_IRQ, my_dev_id = 1, irq_counter = 0;$/;"	v	file:
+irq_counter	inttest1.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0, i = 0;$/;"	v	file:
+irq_counter	intthread.c	/^static int irq = SHARED_IRQ, my_dev_id = 1, irq_counter = 0;$/;"	v	file:
+irq_counter	tasklet_ex2.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0;$/;"	v	file:
+irq_counter	tbh.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0;$/;"	v	file:
+j	tasklet_ex.c	/^	int j;$/;"	m	struct:simp	file:
+my_dev_id	inttest.c	/^static int irq = SHARED_IRQ, my_dev_id = 1, irq_counter = 0;$/;"	v	file:
+my_dev_id	inttest1.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0, i = 0;$/;"	v	file:
+my_dev_id	intthread.c	/^static int irq = SHARED_IRQ, my_dev_id = 1, irq_counter = 0;$/;"	v	file:
+my_dev_id	tasklet_ex2.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0;$/;"	v	file:
+my_dev_id	tasklet_ex3.c	/^static int irq = SHARED_IRQ, my_dev_id;$/;"	v	file:
+my_dev_id	tasklet_ex4.c	/^static int irq = SHARED_IRQ, my_dev_id;$/;"	v	file:
+my_dev_id	tasklet_ex5.c	/^static int irq = SHARED_IRQ, my_dev_id;$/;"	v	file:
+my_dev_id	tbh.c	/^static int irq = SHARED_IRQ, my_dev_id, irq_counter = 0;$/;"	v	file:
+my_exit	inttest.c	/^module_exit(my_exit);$/;"	v
+my_exit	inttest.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	inttest1.c	/^module_exit(my_exit);$/;"	v
+my_exit	inttest1.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	intthread.c	/^module_exit(my_exit);$/;"	v
+my_exit	intthread.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	tasklet_ex.c	/^module_exit(my_exit);$/;"	v
+my_exit	tasklet_ex.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	tasklet_ex2.c	/^module_exit(my_exit);$/;"	v
+my_exit	tasklet_ex2.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	tasklet_ex3.c	/^module_exit(my_exit);$/;"	v
+my_exit	tasklet_ex3.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	tasklet_ex4.c	/^module_exit(my_exit);$/;"	v
+my_exit	tasklet_ex4.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	tasklet_ex5.c	/^module_exit(my_exit);$/;"	v
+my_exit	tasklet_ex5.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_exit	tbh.c	/^module_exit(my_exit);$/;"	v
+my_exit	tbh.c	/^static void __exit my_exit(void)$/;"	f	file:
+my_init	inttest.c	/^module_init(my_init);$/;"	v
+my_init	inttest.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	inttest1.c	/^module_init(my_init);$/;"	v
+my_init	inttest1.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	intthread.c	/^module_init(my_init);$/;"	v
+my_init	intthread.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	tasklet_ex.c	/^module_init(my_init);$/;"	v
+my_init	tasklet_ex.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	tasklet_ex2.c	/^module_init(my_init);$/;"	v
+my_init	tasklet_ex2.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	tasklet_ex3.c	/^module_init(my_init);$/;"	v
+my_init	tasklet_ex3.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	tasklet_ex4.c	/^module_init(my_init);$/;"	v
+my_init	tasklet_ex4.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	tasklet_ex5.c	/^module_init(my_init);$/;"	v
+my_init	tasklet_ex5.c	/^static int __init my_init(void)$/;"	f	file:
+my_init	tbh.c	/^module_init(my_init);$/;"	v
+my_init	tbh.c	/^static int __init my_init(void)$/;"	f	file:
+my_interrupt	inttest.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	inttest1.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	intthread.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	tasklet_ex2.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	tasklet_ex3.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	tasklet_ex4.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	tasklet_ex5.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_interrupt	tbh.c	/^static irqreturn_t my_interrupt(int irq, void *dev_id)$/;"	f	file:
+my_intthread	intthread.c	/^static irqreturn_t my_intthread(int irq, void *dev_id)$/;"	f	file:
+nevents	tasklet_ex4.c	/^static atomic_t nevents;	\/* number of events to deal with *\/$/;"	v	file:
+simp	tasklet_ex.c	/^static struct simp {$/;"	s	file:
+t_data	tasklet_ex.c	/^} t_data;$/;"	v	typeref:struct:simp	file:
+t_fun	tasklet_ex.c	/^static void t_fun(unsigned long t_arg)$/;"	f	file:
+t_fun	tasklet_ex2.c	/^static void t_fun(unsigned long t_arg)$/;"	f	file:
+t_fun	tasklet_ex3.c	/^static void t_fun(unsigned long t_arg)$/;"	f	file:
+t_fun	tasklet_ex4.c	/^static void t_fun(unsigned long t_arg)$/;"	f	file:
+t_fun	tasklet_ex5.c	/^static void t_fun(unsigned long t_arg)$/;"	f	file:
+t_fun	tbh.c	/^static int t_fun(void *t_arg)$/;"	f	file:
+tsk	tbh.c	/^static struct task_struct *tsk;$/;"	v	typeref:struct:task_struct	file:

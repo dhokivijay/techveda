@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DEVICE	usbprobe.c	7;"	d	file:
+KDIR	Makefile	/^KDIR= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+USB_SKEL_MINOR_BASE	usbdrv2.c	10;"	d	file:
+VENDOR	usbprobe.c	6;"	d	file:
+bulk_in_buffer	usbdrv.c	/^	unsigned char *bulk_in_buffer;	\/* the buffer to receive data *\/$/;"	m	struct:drv_priv	file:
+bulk_in_buffer	usbdrv2.c	/^	unsigned char *bulk_in_buffer;		\/* the buffer to receive data *\/$/;"	m	struct:drv_priv	file:
+bulk_in_endpointAddr	usbdrv.c	/^	__u8 bulk_in_endpointAddr;	\/* the address of the bulk in endpoint *\/$/;"	m	struct:drv_priv	file:
+bulk_in_endpointAddr	usbdrv2.c	/^	__u8 bulk_in_endpointAddr;		\/* the address of the bulk in endpoint *\/$/;"	m	struct:drv_priv	file:
+bulk_in_read	usbdrv2.c	/^	size_t bulk_in_read;			\/* size of data read from device *\/$/;"	m	struct:drv_priv	file:
+bulk_in_size	usbdrv.c	/^	size_t bulk_in_size;	\/* the size of the receive buffer *\/$/;"	m	struct:drv_priv	file:
+bulk_in_size	usbdrv2.c	/^	size_t bulk_in_size;			\/* the size of the receive buffer *\/$/;"	m	struct:drv_priv	file:
+bulk_in_urb	usbdrv2.c	/^	struct urb  *bulk_in_urb;               \/* the urb to read data with *\/$/;"	m	struct:drv_priv	typeref:struct:drv_priv::urb	file:
+bulk_out_endpointAddr	usbdrv.c	/^	__u8 bulk_out_endpointAddr;	\/* the address of the bulk out endpoint *\/$/;"	m	struct:drv_priv	file:
+bulk_out_endpointAddr	usbdrv2.c	/^	__u8 bulk_out_endpointAddr;		\/* the address of the bulk out endpoint *\/$/;"	m	struct:drv_priv	file:
+cleanup_module	usbdrv.c	/^void __exit cleanup_module(void)$/;"	f
+cleanup_module	usbdrv2.c	/^void __exit cleanup_module(void)$/;"	f
+dev_table	usbdrv.c	/^static struct usb_device_id dev_table[] = {$/;"	v	typeref:struct:usb_device_id	file:
+dev_table	usbdrv2.c	/^static struct usb_device_id dev_table[] = {$/;"	v	typeref:struct:usb_device_id	file:
+dev_table	usbprobe.c	/^static struct usb_device_id dev_table[] = {$/;"	v	typeref:struct:usb_device_id	file:
+drv_disconnect	usbdrv.c	/^static void drv_disconnect(struct usb_interface *intf)$/;"	f	file:
+drv_disconnect	usbdrv2.c	/^static void drv_disconnect(struct usb_interface *intf)$/;"	f	file:
+drv_open	usbdrv2.c	/^static int drv_open(struct inode *inode, struct file *file)$/;"	f	file:
+drv_priv	usbdrv.c	/^struct drv_priv {$/;"	s	file:
+drv_priv	usbdrv2.c	/^struct drv_priv {$/;"	s	file:
+drv_probe	usbdrv.c	/^static int drv_probe(struct usb_interface *intf, const struct usb_device_id *id)$/;"	f	file:
+drv_probe	usbdrv2.c	/^static int drv_probe(struct usb_interface *intf, const struct usb_device_id *id)$/;"	f	file:
+drv_read	usbdrv2.c	/^static ssize_t drv_read(struct file *file, char *buffer, size_t count,$/;"	f	file:
+drv_read_bulk_callback	usbdrv2.c	/^static void drv_read_bulk_callback(struct urb *urb)$/;"	f	file:
+drv_release	usbdrv2.c	/^static int drv_release(struct inode *inode, struct file *file)$/;"	f	file:
+drv_write	usbdrv2.c	/^static ssize_t drv_write(struct file *file, const char *user_buffer,$/;"	f	file:
+drv_write_bulk_callback	usbdrv2.c	/^static void drv_write_bulk_callback(struct urb *urb)$/;"	f	file:
+errors	usbdrv.c	/^	int errors;		\/* the last request tanked *\/$/;"	m	struct:drv_priv	file:
+errors	usbdrv2.c	/^	int errors;				\/* the last request tanked *\/$/;"	m	struct:drv_priv	file:
+get_drv_priv	usbdrv.c	21;"	d	file:
+get_drv_priv	usbdrv2.c	27;"	d	file:
+init_module	usbdrv.c	/^int __init init_module(void)$/;"	f
+init_module	usbdrv2.c	/^int __init init_module(void)$/;"	f
+interface	usbdrv.c	/^	struct usb_interface *interface;	\/* the interface for this device *\/$/;"	m	struct:drv_priv	typeref:struct:drv_priv::usb_interface	file:
+interface	usbdrv2.c	/^	struct usb_interface *interface;	\/* the interface for this device *\/$/;"	m	struct:drv_priv	typeref:struct:drv_priv::usb_interface	file:
+kref	usbdrv.c	/^	struct kref kref;$/;"	m	struct:drv_priv	typeref:struct:drv_priv::kref	file:
+kref	usbdrv2.c	/^	struct kref kref;$/;"	m	struct:drv_priv	typeref:struct:drv_priv::kref	file:
+main	test_skel.c	/^int main()$/;"	f
+my_usb_driver	usbprobe.c	/^static struct usb_driver my_usb_driver = {$/;"	v	typeref:struct:usb_driver	file:
+obj-m	Makefile	/^obj-m  := usbprobe.o$/;"	m
+priv_delete	usbdrv.c	/^static void priv_delete(struct kref *kref)$/;"	f	file:
+priv_delete	usbdrv2.c	/^static void priv_delete(struct kref *kref)$/;"	f	file:
+read_completion	usbdrv2.c	/^        struct completion read_completion;     \/* to wait for an ongoing read *\/$/;"	m	struct:drv_priv	typeref:struct:drv_priv::completion	file:
+storage_class	usbdrv2.c	/^static struct usb_class_driver storage_class = {$/;"	v	typeref:struct:usb_class_driver	file:
+storage_driver	usbdrv2.c	/^static struct usb_driver storage_driver;$/;"	v	typeref:struct:usb_driver	file:
+storage_ops	usbdrv2.c	/^static const struct file_operations storage_ops = {$/;"	v	typeref:struct:file_operations	file:
+test_disconnect	usbprobe.c	/^static void test_disconnect(struct usb_interface *intf)$/;"	f	file:
+test_driver	usbdrv.c	/^static struct usb_driver test_driver = {$/;"	v	typeref:struct:usb_driver	file:
+test_driver	usbdrv2.c	/^static struct usb_driver test_driver = {$/;"	v	typeref:struct:usb_driver	file:
+test_exit	usbprobe.c	/^module_exit(test_exit);$/;"	v
+test_exit	usbprobe.c	/^static void test_exit(void)$/;"	f	file:
+test_init	usbprobe.c	/^module_init(test_init);$/;"	v
+test_init	usbprobe.c	/^static int __init test_init(void)$/;"	f	file:
+test_probe	usbprobe.c	/^test_probe(struct usb_interface *intf, const struct usb_device_id *id)$/;"	f	file:
+udev	usbdrv.c	/^	struct usb_device *udev;	\/* the usb device for this device *\/$/;"	m	struct:drv_priv	typeref:struct:drv_priv::usb_device	file:
+udev	usbdrv2.c	/^	struct usb_device *udev;		\/* the usb device for this device *\/$/;"	m	struct:drv_priv	typeref:struct:drv_priv::usb_device	file:

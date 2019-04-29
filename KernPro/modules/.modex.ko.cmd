@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/modules/modex.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/modules/modex.ko /home/dhokivij/KernPro/modules/modex.o /home/dhokivij/KernPro/modules/modex.mod.o ;  true

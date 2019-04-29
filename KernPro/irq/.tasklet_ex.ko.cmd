@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/irq/tasklet_ex.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/irq/tasklet_ex.ko /home/dhokivij/KernPro/irq/tasklet_ex.o /home/dhokivij/KernPro/irq/tasklet_ex.mod.o ;  true

@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/BH/wqpriv.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/BH/wqpriv.ko /home/dhokivij/KernPro/BH/wqpriv.o /home/dhokivij/KernPro/BH/wqpriv.mod.o ;  true

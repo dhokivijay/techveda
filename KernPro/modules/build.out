@@ -1,0 +1,8 @@
+make -C /lib/modules/4.4.0-111-generic/build SUBDIRS=/home/veda/Documents/Sourcesforstudents/KernPro_New/modules modules
+make[1]: Entering directory `/usr/src/linux-headers-4.4.0-111-generic'
+  CHECK   /home/veda/Documents/Sourcesforstudents/KernPro_New/modules/myhello.c
+/bin/sh: 1: sparse: not found
+make[2]: *** [/home/veda/Documents/Sourcesforstudents/KernPro_New/modules/myhello.o] Error 127
+make[1]: *** [_module_/home/veda/Documents/Sourcesforstudents/KernPro_New/modules] Error 2
+make[1]: Leaving directory `/usr/src/linux-headers-4.4.0-111-generic'
+make: *** [all] Error 2

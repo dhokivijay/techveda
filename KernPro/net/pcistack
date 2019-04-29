@@ -1,0 +1,47 @@
+pci express revision 2.0
+
+	1. upto 255 buses per system
+	2. each bus can host up to 32 physical devices
+        3. each phisical device can support upto 8 funtions
+
+Device Configuration & capability data
+
+	4. device contains 4k address region per functionality
+	5. first 255 bytes to 4k space contain pci header 
+         ( 64 byte generic config + 191 byte funtion specific						    capability register)
+	6. rest of the address space contains device class specific registers
+
+
+1. Adapter Driver: 
+          - Runs at boot
+	  - Physical bus scan and system resource assignment(irq, addresses)
+	  - enumerate pci_dev object for each device and pci_bus object for each bus.
+	  - each function in a multifuntion device is seen by kernel as saperate device. 
+
+2. Mid layer
+	  -- linux kernel pci management code
+	  -- abstraction of pci protocol specific operations from high level drivers
+	  -- provides abstract functions for power managment / data transfer and 
+             other control operations
+	  -- Provides an abstract interface for upper layer drivers and adapter driver.
+
+3. High level driver
+         -- register with pci mid layer
+	 -- provide device specific operations
+	 -- register driver with appropriate kernel subsystem/framework.
+
+
+structre of  pci access code in a high level driver
+
+1. Register with Mid layer(pci-core)
+2. Enable Device( initiate power management op)
+3. Set Dma addr size
+4. Enable Bus mastering
+5. Access Device system Resource information
+6. Register irq
+7. map device addresses
+8. Communicate with device
+
+
+
+

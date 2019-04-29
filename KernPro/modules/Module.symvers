@@ -1,0 +1,3 @@
+0x00000000	veda_counter	/home/dhokivij/KernPro/modules/modex	EXPORT_SYMBOL_GPL
+0x00000000	get_counter	/home/dhokivij/KernPro/modules/modexfunc	EXPORT_SYMBOL_GPL
+0x00000000	set_counter	/home/dhokivij/KernPro/modules/modexfunc	EXPORT_SYMBOL_GPL
