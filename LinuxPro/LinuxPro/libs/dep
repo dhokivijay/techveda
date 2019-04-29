@@ -1,0 +1,34 @@
+create shared object libdrv.so with following functions
+lib.c:
+	x()
+	{
+		printf("\n%s\n",__func__);
+	}
+	y()
+	{
+		printf("\n%s\n",__func__);
+		b(); 
+	}
+
+# gcc -c -fPIC lib.c
+# gcc -shared -o libdrv.so  lib.o
+
+create shared object libdep.so with following routines
+dep.c:
+	a()
+	{
+		printf("\n%s\n",__func__);
+	}
+	b()
+	{
+		printf("\n%s\n", __func__);
+	}
+
+# gcc -c -fPIC dep.c
+# gcc -shared -o libdep.so  dep.o
+
+
+
+
+Task : write an application that loads libdrv.so as runtime lib and 
+       invoke x() and y() functions

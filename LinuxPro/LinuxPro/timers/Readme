@@ -1,0 +1,7 @@
+1. timer1.c ---- BSD timers
+2. ptimer1.c ----- posix real time timers with default config
+3. ptimer2.c ----- posix real time with sigevent set to SIGRTMAX
+4. ptimer3.c ----- posix with sigevent set to THREAD
+5. ptimer4.c ----- native linux timer interface
+
+

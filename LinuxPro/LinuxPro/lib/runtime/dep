@@ -1,0 +1,5 @@
+libxyz.so
+	- f1()
+		x1()-----> liba.so
+	- f2()
+		x2()-----> libb.so

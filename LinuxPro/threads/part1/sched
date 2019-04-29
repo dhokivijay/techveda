@@ -1,0 +1,28 @@
+
+1. Linux kernel process scheduler implementation
+	a) Core scheduling algorithm
+	b) sched policy ( plugin)
+
+sched policy (plugins):
+
+   1. Priority preemptive fair share scheduler(SCHED_OTHER : general purpose 
+      policy))
+	- Default policy for all process and posix threads
+	- operates on Dynamic priority and static priority zero(0).
+	- scheduler assigns dynamic priority based on following factors
+                 - amount of time process/thread is waiting for CPU
+		 - nice value assigned
+		 - Type of process/thread (I/O bound or CPU bound)
+	- process/threads using this policy have un-determistic execution times.
+
+
+
+
+   2. static priority preemptive scheduler(real-time policy)
+	- operates strictly as per static priority assigned
+	- priority range 1- 99( larger no increased prio)
+	- highest priority first
+	- process/threads using this policy can be deterministic(fixed time).
+	- provides FIFO/RR modes to handle equal priority threads/processes
+	        a. SCHED_RR: Round robin among equal priority
+                b. SCHED_FIFO: FIFO among equal priority

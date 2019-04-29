@@ -1,0 +1,19 @@
+1. what kernel functions(syscalls) does fork() api invoke ?
+
+2. how does fork() return in  two context's ?
+
+3. what is a "defunc" process?
+
+4. how do we ensure that a process does  not remain in "defunc" state ?
+
+5. what is notion behind unix design that a process can exist only with a valid parent ?
+   ( why each process has a parent process ?)
+
+6. what is copy-on-write ?
+
+7. what resources are shared under copy-on-write ?
+
+
+
+
+

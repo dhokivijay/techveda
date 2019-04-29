@@ -1,0 +1,12 @@
+1. write a program that uses clone()api to create new LWP.
+   Note : LWP must share all resources  possbile with parent
+   Hint : man 2 clone
+
+2. write test cases to verify effect of following clone flags
+
+   (i)  CLONE_VM
+   (ii) CLONE_SIGNHAND
+   (iii)CLONE_PARENT
+
+
+

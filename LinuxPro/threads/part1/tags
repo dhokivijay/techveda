@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABC	simple_thread1.c	/^} ABC;$/;"	t	typeref:struct:abc	file:
+DEATH	ex2.c	13;"	d	file:
+DEATH	simple_thread1.c	8;"	d	file:
+ERR	detached_attrib.c	7;"	d	file:
+Thr1_start	cthread2.c	/^void *Thr1_start(void *arg)$/;"	f
+Thr2_start	cthread2.c	/^void *Thr2_start(void *arg)$/;"	f
+Thr_start	cthread1.c	/^static void *Thr_start(void *arg)$/;"	f	file:
+a	simple_thread1.c	/^	int a;$/;"	m	struct:abc	file:
+abc	simple_thread1.c	/^typedef struct abc {$/;"	s	file:
+b	simple_thread1.c	/^	int b;$/;"	m	struct:abc	file:
+detachedthread	ex2.c	/^static void *detachedthread(void *x)$/;"	f	file:
+joinablethread	ex2.c	/^static void *joinablethread(void *x)$/;"	f	file:
+main	attr_sched.c	/^int main()$/;"	f
+main	attr_sched1.c	/^int main ()$/;"	f
+main	attr_stack.c	/^int main()$/;"	f
+main	cthread1.c	/^int main()$/;"	f
+main	cthread2.c	/^int main()$/;"	f
+main	defattrtib.c	/^int main(int argc, char *argv[])$/;"	f
+main	detached_attrib.c	/^int main()$/;"	f
+main	dyn_detach.c	/^int main()$/;"	f
+main	dyn_join.c	/^int main()$/;"	f
+main	ex2.c	/^int main()$/;"	f
+main	simple_thread.c	/^int main()$/;"	f
+main	simple_thread1.c	/^int main()$/;"	f
+read_detachstate_attribute	defattrtib.c	/^void read_detachstate_attribute(pthread_attr_t *attr)$/;"	f
+read_detachstate_attribute	dyn_detach.c	/^void read_detachstate_attribute(pthread_attr_t *attr)$/;"	f
+read_detachstate_attribute	dyn_join.c	/^void read_detachstate_attribute(pthread_attr_t *attr)$/;"	f
+read_guard_attribute	defattrtib.c	/^void read_guard_attribute(pthread_attr_t *attr)$/;"	f
+read_schedpolicy_attribute	defattrtib.c	/^void read_schedpolicy_attribute(pthread_attr_t *attr)$/;"	f
+read_stack_attrib	attr_stack.c	/^void read_stack_attrib(pthread_attr_t *attr)$/;"	f
+read_stack_attributes	defattrtib.c	/^void read_stack_attributes(pthread_attr_t *attr)$/;"	f
+ret	ex2.c	/^int *ret;$/;"	v
+t1	cthread2.c	/^pthread_t t1,t2;$/;"	v
+t2	cthread2.c	/^pthread_t t1,t2;$/;"	v
+t_routine	attr_sched.c	/^void *t_routine(void *null)$/;"	f
+t_routine	attr_sched1.c	/^void * t_routine(void *null)$/;"	f
+t_routine	attr_stack.c	/^void * t_routine (void *p)$/;"	f
+t_routine	defattrtib.c	/^void* t_routine(void* param)$/;"	f
+t_routine	dyn_detach.c	/^void * t_routine(void * null)$/;"	f
+t_routine	dyn_join.c	/^void * t_routine(void * null)$/;"	f
+threadFunc	detached_attrib.c	/^static void * threadFunc(void *x)$/;"	f	file:
+threadFunc	simple_thread.c	/^static void *threadFunc(void *arg)$/;"	f	file:
+threadFunc	simple_thread1.c	/^static void *threadFunc(void *arg)$/;"	f	file:

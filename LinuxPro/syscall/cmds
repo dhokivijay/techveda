@@ -1,0 +1,5 @@
+List of all API's
+
+#ls /usr/share/man/man2 | sed -e s/.2.gz//g | xargs man -s 2 -k  | sort | grep -v 'unimplemented system calls'
+
+

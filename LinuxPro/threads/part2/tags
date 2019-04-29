@@ -1,0 +1,97 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DATA	thr_shdata_excl.c	/^}DATA;$/;"	t	typeref:struct:__anon2	file:
+EXIT_SUCCESS	thr_shdata.c	4;"	d	file:
+G	thr_shdata.c	/^struct G {$/;"	s	file:
+a	thr_shdata.c	/^	int a;$/;"	m	struct:G	file:
+a	thr_shdata_excl.c	/^	int a;$/;"	m	struct:__anon2	file:
+a	thr_shdata_mtx.c	/^	int a;$/;"	m	struct:shdata	file:
+b	thr_shdata.c	/^	int b;$/;"	m	struct:G	file:
+b	thr_shdata_excl.c	/^	int b;$/;"	m	struct:__anon2	file:
+b	thr_shdata_mtx.c	/^	int b;$/;"	m	struct:shdata	file:
+ex_flag	thr_shdata_excl.c	/^int ex_flag;  \/* exclusion counter *\/$/;"	v
+func	thr_lock1.c	/^void func()$/;"	f
+func	thr_lock2.c	/^int func()$/;"	f
+glob	thr_shdata_excl.c	/^DATA glob; \/* shared data object *\/$/;"	v
+glob	thread_inc_sem.c	/^static int glob = 0;$/;"	v	file:
+glob	thread_incr.c	/^static int glob = 0;$/;"	v	file:
+glob	thread_incr_atomic.c	/^static int glob = 0;$/;"	v	file:
+glob	thread_incr_mtx.c	/^static int glob = 0;$/;"	v	file:
+glob_t	pthread_spinlock.c	/^}glob_t;$/;"	t	typeref:struct:__anon1	file:
+global	pthread_spinlock.c	/^	int global;$/;"	m	struct:__anon1	file:
+main	consistent.c	/^int main ()$/;"	f
+main	errchk.c	/^int main()$/;"	f
+main	pthread_rwlock.c	/^int main()$/;"	f
+main	pthread_spinlock.c	/^int main ()$/;"	f
+main	recur.c	/^int main ()$/;"	f
+main	rw_wriprio.c	/^int main()$/;"	f
+main	thr_lock.c	/^int main()$/;"	f
+main	thr_lock1.c	/^int main()$/;"	f
+main	thr_lock2.c	/^int main()$/;"	f
+main	thr_shdata.c	/^int main()$/;"	f
+main	thr_shdata_abmon.c	/^int main()$/;"	f
+main	thr_shdata_excl.c	/^int main()$/;"	f
+main	thr_shdata_mtx.c	/^int main()$/;"	f
+main	thread_inc_sem.c	/^int main()$/;"	f
+main	thread_incr.c	/^int main()$/;"	f
+main	thread_incr_atomic.c	/^int main()$/;"	f
+main	thread_incr_mtx.c	/^int main()$/;"	f
+mtx	thr_lock.c	/^static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+mtx	thr_lock1.c	/^static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+mtx	thr_lock2.c	/^static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+mtx	thr_shdata_mtx.c	/^pthread_mutex_t mtx;$/;"	v
+mtx	thread_incr_mtx.c	/^static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+mutex	consistent.c	/^pthread_mutex_t mutex;$/;"	v
+mutex	errchk.c	/^pthread_mutex_t mutex;$/;"	v
+mutex	recur.c	/^pthread_mutex_t mutex;$/;"	v
+obj	thr_shdata.c	/^struct G obj;			\/* shared data object *\/$/;"	v	typeref:struct:G
+obj	thr_shdata_abmon.c	/^struct shdata obj;$/;"	v	typeref:struct:shdata
+obj	thr_shdata_mtx.c	/^struct shdata obj; $/;"	v	typeref:struct:shdata
+obj_init	thr_monitor.c	/^int obj_init(struct shdata *obj)$/;"	f
+obj_read	thr_monitor.c	/^int obj_read(struct shdata *obj)$/;"	f
+obj_write	thr_monitor.c	/^int obj_write(struct shdata *obj, int newa, int newb)$/;"	f
+pthread_seq_init_np	pthread_seq.c	/^int pthread_seq_init_np(pthread_seq_t * lck)$/;"	f
+pthread_seq_rdlock_np	pthread_seq.c	/^int pthread_seq_rdlock_np(pthread_seq_t * lck)$/;"	f
+pthread_seq_rdunlock_np	pthread_seq.c	/^int pthread_seq_rdunlock_np(pthread_seq_t * lck)$/;"	f
+pthread_seq_wrlock_np	pthread_seq.c	/^int pthread_seq_wrlock_np(pthread_seq_t * lck)$/;"	f
+pthread_seq_wrunlock_np	pthread_seq.c	/^int pthread_seq_wrunlock_np(pthread_seq_t * lck)$/;"	f
+reader	consistent.c	/^void * reader(void *p)$/;"	f
+reader	pthread_rwlock.c	/^void *reader(void *p)$/;"	f
+reader	recur.c	/^void * reader(void *p)$/;"	f
+reader	rw_wriprio.c	/^void *reader(void *arg)$/;"	f
+reader	thr_shdata_abmon.c	/^static void *reader(void *arg)$/;"	f	file:
+reader	thr_shdata_excl.c	/^static void * reader(void *arg)		\/* Thread 2 *\/$/;"	f	file:
+reader	thr_shdata_mtx.c	/^static void * reader(void *arg)$/;"	f	file:
+recover	consistent.c	/^void recover(void)$/;"	f
+rwlock	pthread_rwlock.c	/^pthread_rwlock_t rwlock = PTHREAD_RWLOCK_INITIALIZER;$/;"	v
+sem	thread_inc_sem.c	/^static sem_t sem;$/;"	v	file:
+seqlck	rw_wriprio.c	/^pthread_seq_t seqlck;$/;"	v
+shared	rw_wriprio.c	/^int shared = 0;$/;"	v
+shdata	thr_shdata_mtx.c	/^struct shdata {$/;"	s	file:
+spin	pthread_spinlock.c	/^	pthread_spinlock_t spin ; $/;"	v
+t1_start	errchk.c	/^void * t1_start(void *p)$/;"	f
+t_start	errchk.c	/^void * t_start(void *p)$/;"	f
+thr_routine	thr_lock2.c	/^static void *thr_routine(void *arg)$/;"	f	file:
+thread1	pthread_spinlock.c	/^void * thread1(void *p)$/;"	f
+thread1	thr_lock.c	/^static void *thread1(void *arg)$/;"	f	file:
+thread1	thr_lock1.c	/^static void *thread1(void *arg)$/;"	f	file:
+thread2	pthread_spinlock.c	/^void * thread2(void *p)$/;"	f
+thread2	thr_lock.c	/^void *thread2(void *arg)$/;"	f
+thread2	thr_lock1.c	/^void *thread2(void *arg)$/;"	f
+threadFunc	thread_inc_sem.c	/^threadFunc(void *arg)$/;"	f	file:
+threadFunc	thread_incr.c	/^threadFunc(void *arg)$/;"	f	file:
+threadFunc	thread_incr_atomic.c	/^static void * threadFunc(void *arg)$/;"	f	file:
+threadFunc	thread_incr_mtx.c	/^threadFunc(void *arg)$/;"	f	file:
+threadFunc1	thr_shdata.c	/^static void *threadFunc1(void *arg)$/;"	f	file:
+threadFunc2	thr_shdata.c	/^static void *threadFunc2(void *arg)$/;"	f	file:
+writer	consistent.c	/^void * writer(void *p)$/;"	f
+writer	pthread_rwlock.c	/^void *writer(void *p)$/;"	f
+writer	recur.c	/^void * writer(void *p)$/;"	f
+writer	rw_wriprio.c	/^void *writer(void *arg)$/;"	f
+writer	thr_shdata_abmon.c	/^static void *writer(void *arg)$/;"	f	file:
+writer	thr_shdata_excl.c	/^static void * writer(void *arg) \/* Thread 1 *\/$/;"	f	file:
+writer	thr_shdata_mtx.c	/^static void * writer(void *arg) $/;"	f	file:

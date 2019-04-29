@@ -1,0 +1,37 @@
+1. write a test case to verify if signal handlers are shared by parent and
+   child process. Check if sighand list of parent is shared under COW.
+
+
+2. write a test case to verify if blocked sigmask is shared by parent and child   process created using fork().
+
+	step 1: mask(block) few signals using sigprocmask api
+	step 2: create a child process using fork()
+	step 3: put child into inifinite loop
+
+   generate masked signals to child process and observe response.
+
+3. Impelement a program that shows current clock time every minute on terminal
+   through signal handler
+
+	step 1: register for a periodic timer at 1 minute resloution
+	step 2: Register signal handler to respond to timer signal
+	step 3: get current time and print to console from signal handler
+	
+   Refer: # man 2 setitimer
+	  # man   ctime
+	  # man 2 time
+
+4. verify if active timers of parent are shared by child process created 
+   using fork().
+
+5. Impelement a program that shows current clock time every minute on terminal
+   through using posix real time timer interface
+
+        step 1: register for a periodic timer at 1 minute resloution
+        step 2: Register signal handler to respond to timer signal
+        step 3: get current time and print to console from signal handler
+
+   Refer: # man 2 timer_create
+          # man 2 timer_settime
+          # man 2 sigaction
+

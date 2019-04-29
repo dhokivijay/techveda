@@ -1,0 +1,41 @@
+Steps to create a shared object for distribution as Dynamic library
+
+version No's
+
+Major. Minor. Release
+1.0.0
+1.0.1 
+1.0.30
+1.1.0
+2.0.0
+-------------------------------------------------------------------------------------
+Building shared library with version stamp:
+
+1. Build shared library  
+
+     # gcc -shared -Wl,-soname,libxyz.so.1 -o libxyz.so.1.0.0 mytest.o
+
+2. Create a pointer from "soname" to library file
+
+     # ln -sf libxyz.so.1.0.0 libxyz.so.1
+
+3. Create a pointer for linker to use while resolving -l<libname> flag
+ 
+     # ln -sf libxyz.so.1 libxyz.so
+-------------------------------------------------------------------------------------
+Application usage
+
+4. Link applications with the lib using
+
+     # gcc testapp.c -o test -L. -lxyz
+
+------------------------------------------------------------------------------------
+Updating to new version 
+
+NOTE: Re-establish link created in step 2 when new version of library is available 
+
+	# ln -sf libxyz.so.1.0.1 libxyz.so.1
+	# ./test
+verify results with
+ 
+	# ldd ./app

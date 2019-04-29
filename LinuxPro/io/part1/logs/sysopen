@@ -1,0 +1,38 @@
+How vfs Resolves common Api call to a particular file-system
+(Conceptual flow )
+------------------------------------------------------------------------------------------
+open()-->| sys_open()---> fs_open()
+
+int open(const char * path)
+{
+   step 1: validates physical presence of file 
+   step 2: invokes sys_open() call of vfs to process open request
+   step 3: returns value that system call returns
+}
+
+int sys_open(const char * path)
+{
+   step 1: locate specified file vnode in vfs tree(root file system)
+   step 2: find file-system specific inode for the file (through
+           vfs_vnode fields)and invokes open operation bound to inode.
+
+	  fptr = vnode -> fs_inode ->fops -> open()
+	  int a = fptr(); /* invoking file system's open call */
+	  if( a == 0)
+	  {		
+            step 3: allocate instance of struct file
+	    step 4: initialize file object with attributes and address
+                    of file system operations (fops)
+	    step 5: map address of file object to caller process
+                    file descriptor table.
+	    step 6: return offset number (file descriptor table)to which file 
+                    descriptor structure is mapped.  
+	  }
+	else
+	   {
+	   step  7: return  a;
+	   }
+}
+
+		    
+  

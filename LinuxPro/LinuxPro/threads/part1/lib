@@ -1,0 +1,33 @@
+Pthreads library organisation 
+===============================
+
+1. Thread creation & management calls	
+	pthread_t, pthread_attr_t, pthread_once_t
+
+2. Thread synchronization calls
+       pthread_cond_t, pthread_barrier_t, pthread_sigmask
+
+3. Shared data access sync calls
+	pthread_mutex_t, rwlock_t, sem_t, pthread_spinlock_t
+
+4. Timer events
+	timer_t
+
+5. hardware access calls
+
+
+Function naming conventions
+===========================
+
+   1. standard posix threads calls 
+		libname_dataobject_operationname()
+		libname_operationname()
+
+   2. Platform specific extensions to pthreads
+		libname_dataobject_operationname_np (non-posix/non-portable)
+
+	pthread_cond_wait  : wait on a condition flag(cond_t).
+	pthread_barrier_wait: wait on a barrier(barrier_t).
+	pthread_attr_init : initialize thread attributes(attr_t)
+	pthread_exit : Function that directly operates on thread object 	
+ 
