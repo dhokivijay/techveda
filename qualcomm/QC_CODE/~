@@ -1,0 +1,17 @@
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v149)
+"   /home/systebui/QC_CODE/qualtools
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+" ============================================================================
+../
+./
+.git/
+ARM_Compiler_5/
+HEXAGON_Tools/
+gcc-linaro-aarch64-none-elf-4.9-2014.07_linux/
+gcc-linaro-arm-linux-gnueabihf-4.8-2014.02_linux/
+llvm/
+qualtools.sh*
+.swp

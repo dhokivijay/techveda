@@ -1,0 +1,150 @@
+    1  ifconfig
+    2  sudo apt-get install scp
+    3  sudo apt-get install ssh
+    4  ls
+    5  sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip
+    6  cd QC_CODE/
+    7  ls
+    8  sudo apt-get install software-properties-commonpython-software-properties
+    9  sudo apt-get install software-properties-common
+   10  sudo apt-get install python-software-properties
+   11  sudo add-apt-repository ppa:openjdk-r/ppa
+   12  sudo apt-get update  
+   13  sudo apt-get install openjdk-7-jdk
+   14  cd /usr/lib/jvm/java-7-openjdk-amd64/bin/
+   15  ls
+   16  cd 
+   17  cd QC_CODE/
+   18  ls\
+   19  ls
+   20  cd /usr/lib/jvm/java-7-openjdk-amd64/bin
+   21  ls
+   22  cd
+   23  cd QC_CODE/
+   24  ls
+   25  sudo add-apt-repository ppa:git-core/ppa
+   26  sudo apt-get update
+   27  sudo apt-get install git
+   28  sudo apt-get install libxml-parser-perl
+   29  sudo dpkg-reconfigure dash
+   30  sudo apt-get purge ca-certificates curl openssh-server
+   31  sudo apt-get purge
+   32  sudo apt-get ca-certificates
+   33  sudo apt-get purge ca-certificates curl openssh-server
+   34  sudo apt-get curl openssh-server
+   35* 
+   36  sudo apt-get install  curl openssh-server
+   37  sudo apt-get install ca-certificates
+   38  sudo apt-get install purge ca-certificates curl openssh-server
+   39  sudo apt-get install purge
+   40  sudo apt-get purge
+   41  sudo apt-get purge ca-certificates curl openssh-server
+   42  sudo apt-get default-jre-headless
+   43  sudo apt-get install default-jre-headless
+   44  sudo apt-get install  openjdk-7-jre
+   45  sudo apt-get install meld
+   46  sudo apt-get install curl
+   47  sudo apt-get install xpad
+   48  sudo apt-get install unrar
+   49  python -V
+   50  sudo apt-get install python
+   51  python --v
+   52  python -v
+   53* 
+   54  sudo apt-get install python 2.7.12
+   55  sudo apt-get install python_2.7.12
+   56  python -V
+   57  git clone http://192.168.2.223:1900/vtech/qualtools.git
+   58  cd qualtools/
+   59  ./qualtools.sh 
+   60  cd ../vt3n/LINUX/android/
+   61  source build/envsetup.sh 
+   62  lunch 
+   63  make -j8
+   64  cd
+   65  cd QC_CODE/
+   66  ls
+   67  cd qualtools/
+   68  ls
+   69  chmod +x qualtools.sh
+   70  /qualtools.sh
+   71  ./qualtools.sh 
+   72  cd ../
+   73  cd vt3n/LINUX/android/
+   74  ls
+   75  source build/envsetup.sh
+   76  lunch
+   77  make -j8
+   78  sudo apt-get purge ca-certificates curl openssh-server
+   79  sudo apt-get install ca-certificates curl openssh-server
+   80  cd ../
+   81  ls
+   82  cd android/
+   83  ls
+   84  lunch
+   85  make -j8
+   86  make -j8 > log.txt
+   87  ls
+   88  vim log.txt 
+   89  sudo apt-get install vim
+   90  vim log.txt 
+   91  sudo apt-get install vim
+   92  make -j8 > log.txt
+   93  vim log.txt 
+   94  sudo apt-get install libbz2-dev
+   95  make -j8
+   96  python -V
+   97  /usr/bin/python -c "import bz2; print bz2.__doc__"
+   98  echo $PATH
+   99  make -j8
+  100  ls
+  101  make -j8
+  102  source build/envsetup.sh 
+  103  lunch
+  104  make -j8
+  105  LS
+  106  ls
+  107  cd build/
+  108  ls
+  109  cd ../
+  110  ls
+  111  cd out/
+  112  ls
+  113  cd target/
+  114  ls
+  115  cd product/
+  116  ls
+  117  cd msm8909_512/
+  118  ls
+  119  ifconfig
+  120  ls radio.img
+  121  ls
+  122  cd ../../../
+  123  ls
+  124  cd ../../
+  125  cd ../
+  126  ls
+  127  cd LINUX/android/
+  128  ls
+  129  cd out/
+  130  ls
+  131  cd target/
+  132  ls
+  133  cd product/
+  134  ls
+  135  cd msm8909_512/
+  136  ls
+  137  cd ../../../
+  138  ls
+  139  cd ../
+  140  grep -r ".zip"
+  141  ls
+  142  cd ../../
+  143  ls
+  144  vim pack_all_sign.sh 
+  145  ls
+  146  cd ../
+  147  ls
+  148  ssh sessitra@192.168.2.169
+  149  history
+  150  history >> command.txt
