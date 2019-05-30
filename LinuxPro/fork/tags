@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CHILD	frk.c	6;"	d	file:
+CHILD	frk1.c	6;"	d	file:
+CHILD	frk1_ex.c	6;"	d	file:
+CHILD	frk2.c	7;"	d	file:
+CHILD	frk3.c	8;"	d	file:
+CHILD	frk5.c	7;"	d	file:
+CHILD	frk7.c	8;"	d	file:
+CHILD	frk8.c	12;"	d	file:
+CHILD	frkas.c	7;"	d	file:
+CHILD	frkas1.c	7;"	d	file:
+CHILD	frkex1.c	8;"	d	file:
+CHILD	frkfd.c	8;"	d	file:
+CHILD	sigchld.c	8;"	d	file:
+CHILD	sigchld1.c	8;"	d	file:
+cPid	frkas1.c	/^pid_t cPid, cPid1, ret, ret1;$/;"	v
+cPid1	frkas1.c	/^pid_t cPid, cPid1, ret, ret1;$/;"	v
+childstatus	frk3.c	/^int childstatus;$/;"	v
+childstatus	frkex1.c	/^int childstatus;$/;"	v
+childstatus	sigchld.c	/^int childstatus;$/;"	v
+childstatus	sigchld1.c	/^int childstatus;$/;"	v
+cpid	frkex1.c	/^pid_t cpid, cpid1;$/;"	v
+cpid	sigchld1.c	/^pid_t cpid, cpid1;$/;"	v
+cpid1	frkex1.c	/^pid_t cpid, cpid1;$/;"	v
+cpid1	sigchld1.c	/^pid_t cpid, cpid1;$/;"	v
+func	frk4.c	/^static int func(int arg)$/;"	f	file:
+global	frk5.c	/^int global;$/;"	v
+main	frk.c	/^int main()$/;"	f
+main	frk1.c	/^int main()$/;"	f
+main	frk10.c	/^int main(void)$/;"	f
+main	frk1_ex.c	/^int main()$/;"	f
+main	frk2.c	/^int main()$/;"	f
+main	frk3.c	/^int main()$/;"	f
+main	frk4.c	/^int main(void)$/;"	f
+main	frk5.c	/^int main()$/;"	f
+main	frk6.c	/^int main(void)$/;"	f
+main	frk7.c	/^int main()$/;"	f
+main	frk8.c	/^int main()$/;"	f
+main	frk9.c	/^int main(void)$/;"	f
+main	frkas.c	/^int main()$/;"	f
+main	frkas1.c	/^int main()$/;"	f
+main	frkex1.c	/^int main()$/;"	f
+main	frkfd.c	/^int main()$/;"	f
+main	sigchld.c	/^int main()$/;"	f
+main	sigchld1.c	/^int main()$/;"	f
+ret	frkas1.c	/^pid_t cPid, cPid1, ret, ret1;$/;"	v
+ret1	frkas1.c	/^pid_t cPid, cPid1, ret, ret1;$/;"	v
+sighand	frk3.c	/^void sighand(int signum)$/;"	f
+sighand	frkas1.c	/^void sighand(int signum)$/;"	f
+sighand	frkex1.c	/^void sighand(int signum)$/;"	f
+sighand	sigchld.c	/^void sighand(int signum)$/;"	f
+sighand	sigchld1.c	/^void sighand(int signum)$/;"	f

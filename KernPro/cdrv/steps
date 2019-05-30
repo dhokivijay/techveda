@@ -1,0 +1,7 @@
+1. create a device file to represent driver
+
+    mknod /dev/filename <file type> <file id> 
+
+2. register driver operations with vfs
+
+3. write an application that initiates driver ops using common file api's.

@@ -1,0 +1,21 @@
+read -->|sys_read ---> fs_read
+
+fs_read()
+{
+  step 1: identify data region of file on disk(inode)
+  step 2: lookup  iocache for requested data
+	if(true)
+		jmp step 5
+  step 3: Allocate buffer(new iocache block)
+  step 4: instruct storage driver to transfer file data to buffer
+  step 5: transfer data to caller application buffer(uspace)
+}	
+
+write -->|sys_write -->fs_write
+
+fs_write()
+{
+   step 1: identify buffer of the specified file in iocache
+   step 2: update iocache
+   step 3: schedule disk sync
+}

@@ -1,0 +1,39 @@
+fork() |----> sys_fork()---->do_fork()---->copy_process()
+
+int main()
+{
+	pid_t child;
+	child = fork();
+	if(child == 0)
+		instructions to run in child
+	else 
+		instructions to run in parent
+
+	return 0;
+}
+sys_fork()
+{
+	1. validate args
+	2. invoke do_fork()
+	3. return PID;
+}     
+
+do_fork()
+{
+	1. Allocate new address space
+	2. copy segments of caller address space to new address space.
+	3. allocate new task_struct instance
+	4. copy caller task_struct entries to new task_struct
+           (except identification details).
+	5. return.
+}
+
+
+Note: when operation in step 4 executes, caller's cpu state is copied into
+      child process PCB, resulting both processes to resume/start execution 
+      with same cpu state. (ebp, eip, esp) 	
+
+      when sys_fork returns in parent context it returns pid of the child
+      and when it returns in child context gives back 0;
+
+

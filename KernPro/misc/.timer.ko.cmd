@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/misc/timer.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/misc/timer.ko /home/dhokivij/KernPro/misc/timer.o /home/dhokivij/KernPro/misc/timer.mod.o ;  true

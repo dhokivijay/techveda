@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/BH/wqshared.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/BH/wqshared.ko /home/dhokivij/KernPro/BH/wqshared.o /home/dhokivij/KernPro/BH/wqshared.mod.o ;  true

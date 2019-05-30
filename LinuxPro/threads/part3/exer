@@ -1,0 +1,13 @@
+1. write a program that computes sum of an int array of size 1000. Engage 4 threads  to 
+   process array faster.
+
+  Note: 1. implement main thread to compute the final result
+	
+  Task1: Acheive result using barrier sync
+  Task2: Acheive result without applying barrier
+
+2. write a program which engages two threads to print offsets of an array
+   Implement first thread to print even offsets and other thread to print odd
+   offsets
+
+   TaskNote: use barrier to acheive sync.

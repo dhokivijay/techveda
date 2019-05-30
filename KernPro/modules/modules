@@ -1,0 +1,25 @@
+
+kernel modules
+	
+	1. kernel modules are special binary files that are used to insert kernel 
+           services dynamically (@runtime)
+	2. modules are identified using file extension .ko
+	3. kernel manages modules using a framework called kmod
+
+issues to be considered while writing kernel module sources
+
+1. include kernel headers only
+	$KERNEL_HEADER = /lib/modules/($shell uname -r)/build/include
+
+2. modules can contain constructor(init) and destructor(exit) functions
+   constructor is executed when module is loaded and destructor is run
+   when module is unloaded
+
+	int init_module(void)
+	void cleanup_module(void)
+
+3. use appropriate comment macros to insert code information or description 
+   comments, using these macros makes comments available in module binary 
+   file(.ko file).
+
+4. modules can contain any number  of functions or data elements that define a    kernel service, often these are referred as module body.

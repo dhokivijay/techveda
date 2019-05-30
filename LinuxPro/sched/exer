@@ -1,0 +1,18 @@
+1. write a prgram to fing current sched policy in force ?
+   Hint: man sched_getscheduler
+
+2. write a program to verify if parent's sched policy and priority inherited 
+   by child process created using fork ?
+
+3. write a program that creates 2 posix threads
+
+	Thr1: sched fifo with prio 10
+	Thr2: sched_rr with prio 15
+    Observe if they terminate in priority order 
+
+4. write an application with following threads
+	
+	Thr1: gathers date/time stamp from cmos-rtc
+ 	Note: This thread has to update DATE/TIME stamp into buffer every 30 secs
+
+

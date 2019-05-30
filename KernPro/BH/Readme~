@@ -1,0 +1,125 @@
+alloc_workqueue() allocates a wq.  The original create_*workqueue()
+functions are deprecated and scheduled for removal.  alloc_workqueue()
+takes three arguments - @name, @flags and @max_active.  @name is the
+name of the wq and also used as the name of the rescuer thread if
+there is one.
+
+A wq no longer manages execution resources but serves as a domain for
+forward progress guarantee, flush and work item attributes.  @flags
+and @max_active control how work items are assigned execution
+resources, scheduled and executed.
+
+@flags:
+
+  WQ_NON_REENTRANT
+
+        By default, a wq guarantees non-reentrance only on the same
+        CPU.  A work item may not be executed concurrently on the same
+        CPU by multiple workers but is allowed to be executed
+        concurrently on multiple CPUs.  This flag makes sure
+        non-reentrance is enforced across all CPUs.  Work items queued
+        to a non-reentrant wq are guaranteed to be executed by at most
+        one worker system-wide at any given time.
+
+  WQ_UNBOUND
+
+        Work items queued to an unbound wq are served by a special
+        gcwq which hosts workers which are not bound to any specific
+        CPU.  This makes the wq behave as a simple execution context
+        provider without concurrency management.  The unbound gcwq
+        tries to start execution of work items as soon as possible.
+        Unbound wq sacrifices locality but is useful for the following
+        cases.
+                                             
+  	* Wide fluctuation in the concurrency level requirement is
+          expected and using bound wq may end up creating large number
+          of mostly unused workers across different CPUs as the issuer
+          hops through different CPUs.
+
+        * Long running CPU intensive workloads which can be better
+          managed by the system scheduler.
+
+  WQ_FREEZABLE
+
+        A freezable wq participates in the freeze phase of the system
+        suspend operations.  Work items on the wq are drained and no
+        new work item starts execution until thawed.
+
+  WQ_MEM_RECLAIM
+
+        All wq which might be used in the memory reclaim paths _MUST_
+        have this flag set.  The wq is guaranteed to have at least one
+        execution context regardless of memory pressure.
+
+  WQ_HIGHPRI
+
+        Work items of a highpri wq are queued at the head of the
+        worklist of the target gcwq and start execution regardless of
+        the current concurrency level.  In other words, highpri work
+        items will always start execution as soon as execution
+        resource is available.
+
+        Ordering among highpri work items is preserved - a highpri
+        work item queued after another highpri work item will start
+        execution after the earlier highpri work item starts.
+
+        Although highpri work items are not held back by other
+        runnable work items, they still contribute to the concurrency
+        level.  Highpri work items in runnable state will prevent
+	non-highpri work items from starting execution.
+
+        This flag is meaningless for unbound wq.
+
+  WQ_CPU_INTENSIVE
+
+        Work items of a CPU intensive wq do not contribute to the
+        concurrency level.  In other words, runnable CPU intensive
+        work items will not prevent other work items from starting
+        execution.  This is useful for bound work items which are
+        expected to hog CPU cycles so that their execution is
+        regulated by the system scheduler.
+
+        Although CPU intensive work items don't contribute to the
+        concurrency level, start of their executions is still
+        regulated by the concurrency management and runnable
+        non-CPU-intensive work items can delay execution of CPU
+        intensive work items.
+
+        This flag is meaningless for unbound wq.
+
+  WQ_HIGHPRI | WQ_CPU_INTENSIVE
+
+        This combination makes the wq avoid interaction with
+        concurrency management completely and behave as a simple
+        per-CPU execution context provider.  Work items queued on a
+        highpri CPU-intensive wq start execution as soon as resources
+        are available and don't affect execution of other work items.
+
+@max_active:
+
+@max_active determines the maximum number of execution contexts per
+CPU which can be assigned to the work items of a wq.  For example,
+with @max_active of 16, at most 16 work items of the wq can be
+executing at the same time per CPU.
+
+Currently, for a bound wq, the maximum limit for @max_active is 512
+and the default value used when 0 is specified is 256.  For an unbound
+wq, the limit is higher of 512 and 4 * num_possible_cpus().  These
+values are chosen sufficiently high such that they are not the
+limiting factor while providing protection in runaway cases.
+
+The number of active work items of a wq is usually regulated by the
+users of the wq, more specifically, by how many work items the users
+may queue at the same time.  Unless there is a specific need for
+throttling the number of active work items, specifying '0' is
+recommended.
+
+Some users depend on the strict execution ordering of ST wq.  The
+combination of @max_active of 1 and WQ_UNBOUND is used to achieve this
+behavior.  Work items on such wq are always queued to the unbound gcwq
+and only one work item can be active at any given time thus achieving
+the same ordering property as ST wq.
+
+
+
+

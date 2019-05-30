@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/BH/wqnewi.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/BH/wqnewi.ko /home/dhokivij/KernPro/BH/wqnewi.o /home/dhokivij/KernPro/BH/wqnewi.mod.o ;  true

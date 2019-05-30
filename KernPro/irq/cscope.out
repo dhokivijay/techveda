@@ -1,0 +1,3166 @@
+cscope 15 $HOME/KernPro/irq               0000018233
+	@inttest.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+5 
+	#SHARED_IRQ
+ 1
+
+	)
+
+6 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+ = 1, 
+	gúq_cou¡î
+ = 0;
+
+7 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+9 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+11 
+úq_cou¡î
+++;
+
+12 
+	`¥_öfo
+("I¿thêISR: cou¡î = %d\n", 
+úq_cou¡î
+);
+
+13  
+IRQ_NONE
+;
+
+15 
+	}
+}
+
+17 
+__öô
+ 
+	$my_öô
+()
+
+19 i‡(
+ªque°_úq
+
+
+20 (
+úq
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_öãºu±", &
+my_dev_id
+))
+
+28 
+	`¥_öfo
+("Registered IRQ handler\n");
+
+30 
+	}
+}
+
+32 
+__exô
+ 
+	$my_exô
+()
+
+35 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+36 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+37 
+	`¥_öfo
+("Successfully unloading \n");
+
+38 
+	}
+}
+
+40 
+moduÀ_öô
+(
+my_öô
+);
+
+41 
+moduÀ_exô
+(
+my_exô
+);
+
+43 
+MODULE_AUTHOR
+("Team veda");
+
+44 
+MODULE_DESCRIPTION
+("Interrupt Handler Test");
+
+45 
+MODULE_LICENSE
+("GPL");
+
+	@inttest1.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+5 
+	#SHARED_IRQ
+ 1
+
+	)
+
+6 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+, 
+	gúq_cou¡î
+ = 0, 
+	gi
+ = 0;
+
+7 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+9 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+11 
+úq_cou¡î
+++;
+
+12 
+	`¥_öfo
+("I¿thêISR: cou¡î = %d\n", 
+úq_cou¡î
+);
+
+13  
+IRQ_NONE
+;
+
+15 
+	}
+}
+
+17 
+__öô
+ 
+	$my_öô
+()
+
+19 
+i
+ = 0; i < 24; i++) {
+
+20 
+	`ªque°_úq
+(
+i
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_interrupt",
+
+21 &
+my_dev_id
+);
+
+29 
+	`¥_öfo
+("Registered IRQ handler\n");
+
+31 
+	}
+}
+
+33 
+__exô
+ 
+	$my_exô
+()
+
+35 
+i
+ = 0; i < 24; i++) {
+
+36 
+	`synchr⁄ize_úq
+(
+i
+);
+
+37 
+	`‰ì_úq
+(
+i
+, &
+my_dev_id
+);
+
+38 
+	`¥_öfo
+("Successfully unloading \n");
+
+40 
+	}
+}
+
+42 
+moduÀ_öô
+(
+my_öô
+);
+
+43 
+moduÀ_exô
+(
+my_exô
+);
+
+45 
+MODULE_AUTHOR
+("Team veda");
+
+46 
+MODULE_DESCRIPTION
+("Interrupt Handler Test");
+
+47 
+MODULE_LICENSE
+("GPL");
+
+	@intthread.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+5 
+	#SHARED_IRQ
+ 1
+
+	)
+
+6 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+ = 1, 
+	gúq_cou¡î
+ = 0;
+
+7 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+9 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+12  
+IRQ_WAKE_THREAD
+;
+
+13 
+	}
+}
+
+15 
+úqªtu∫_t
+ 
+	$my_öâhªad
+(
+úq
+, *
+dev_id
+)
+
+17 
+úq_cou¡î
+++;
+
+18 
+	`¥_öfo
+("I¿thêISR: cou¡î = %d\n", 
+úq_cou¡î
+);
+
+19  
+IRQ_NONE
+;
+
+21 
+	}
+}
+
+23 
+__öô
+ 
+	$my_öô
+()
+
+25 i‡(
+ªque°_thªaded_úq
+
+
+26 (
+úq
+, 
+my_öãºu±
+, 
+my_öâhªad
+, 
+IRQF_SHARED
+,
+
+27 "my_öãºu±", &
+my_dev_id
+))
+
+29 
+	`¥_öfo
+("Registered IRQ handler\n");
+
+31 
+	}
+}
+
+33 
+__exô
+ 
+	$my_exô
+()
+
+36 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+37 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+38 
+	`¥_öfo
+("Successfully unloading \n");
+
+39 
+	}
+}
+
+41 
+moduÀ_öô
+(
+my_öô
+);
+
+42 
+moduÀ_exô
+(
+my_exô
+);
+
+44 
+MODULE_AUTHOR
+("Team veda");
+
+45 
+MODULE_DESCRIPTION
+("Interrupt Handler Test");
+
+46 
+MODULE_LICENSE
+("GPL");
+
+	@tasklet_ex.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/sched.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+4 
+	~<löux/¶ab.h
+>
+
+5 
+	~<löux/öô.h
+>
+
+7 
+t_fun
+(
+t_¨g
+);
+
+9 
+	ssimp
+ {
+
+10 
+	mi
+;
+
+11 
+	mj
+;
+
+12 } 
+	gt_d©a
+;
+
+14 
+DECLARE_TASKLET
+(
+t_«me
+, 
+t_fun
+, ()&
+t_d©a
+);
+
+16 
+__öô
+ 
+	$my_öô
+()
+
+18 
+t_d©a
+.
+i
+ = 100;
+
+19 
+t_d©a
+.
+j
+ = 200;
+
+20 
+	`¥_öfo
+(" schedulög myÅaskÀt, jiffõs%ld \n", 
+jiffõs
+);
+
+21 
+	`èskÀt_scheduÀ
+(&
+t_«me
+);
+
+23 
+	}
+}
+
+25 
+__exô
+ 
+	$my_exô
+()
+
+27 
+	`¥_öfo
+("\nHello: cleanup_moduleÜoadedátáddress 0x%p\n",
+
+28 
+˛ónup_moduÀ
+);
+
+29 
+	}
+}
+
+31 
+	$t_fun
+(
+t_¨g
+)
+
+33 
+simp
+ *
+d©um
+;
+
+34 
+d©um
+ = (
+simp
+ *)
+t_¨g
+;
+
+35 
+	`¥_öfo
+("EnteringÅ_fun, datum->i = %d, jiffies = %ld\n",
+
+36 
+d©um
+->
+i
+, 
+jiffõs
+);
+
+37 
+	`¥_öfo
+("EnteringÅ_fun, ,in context of %s withÖid = %d\n",
+
+38 
+cuºít
+->
+comm
+, cuºít->
+pid
+);
+
+39 
+	}
+}
+
+41 
+moduÀ_öô
+(
+my_öô
+);
+
+42 
+moduÀ_exô
+(
+my_exô
+);
+
+44 
+MODULE_AUTHOR
+("support@techveda.org");
+
+45 
+MODULE_LICENSE
+("GPL");
+
+	@tasklet_ex2.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+4 
+	~<löux/sched.h
+>
+
+6 
+	#SHARED_IRQ
+ 1
+
+	)
+
+7 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+, 
+	gúq_cou¡î
+ = 0;
+
+8 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+10 
+t_fun
+(
+t_¨g
+);
+
+12 
+DECLARE_TASKLET
+(
+t_«me
+, 
+t_fun
+, 0);
+
+14 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+16 
+úq_cou¡î
+++;
+
+17 
+	`¥_öfo
+("I¿thêISR: cou¡î = %d\n", 
+úq_cou¡î
+);
+
+18 
+	`èskÀt_scheduÀ
+(&
+t_«me
+);
+
+19  
+IRQ_NONE
+;
+
+20 
+	}
+}
+
+22 
+	$t_fun
+(
+t_¨g
+)
+
+24 
+¥_öfo
+
+
+26 
+jiffõs
+, 
+cuºít
+->
+pid
+, cuºít->
+comm
+);
+
+27 
+	}
+}
+
+29 
+__öô
+ 
+	$my_öô
+()
+
+31 i‡(
+ªque°_úq
+
+
+32 (
+úq
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_öãºu±", &
+my_dev_id
+))
+
+34 
+	`¥_öfo
+("SuccessfullyÜoading ISR handler\n");
+
+35 
+	`dump_°ack
+();
+
+37 
+	}
+}
+
+39 
+__exô
+ 
+	$my_exô
+()
+
+41 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+42 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+43 
+	`¥_öfo
+("Successfully unloading \n");
+
+44 
+	`dump_°ack
+();
+
+45 
+	}
+}
+
+47 
+moduÀ_öô
+(
+my_öô
+);
+
+48 
+moduÀ_exô
+(
+my_exô
+);
+
+50 
+MODULE_AUTHOR
+("Team veda");
+
+51 
+MODULE_DESCRIPTION
+("Interrupt Handler Test");
+
+52 
+MODULE_LICENSE
+("GPL");
+
+	@tasklet_ex3.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+4 
+	~<löux/dñay.h
+>
+
+5 
+	~<löux/kî√l.h
+>
+
+7 
+	#SHARED_IRQ
+ 1
+
+	)
+
+8 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+;
+
+9 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+11 
+	gdñay
+ = 0;
+
+12 
+moduÀ_∑øm
+(
+dñay
+, , 
+S_IRUGO
+);
+
+14 
+©omic_t
+ 
+	gcou¡î_bh
+, 
+	gcou¡î_th
+;
+
+16 
+	$t_fun
+(
+t_¨g
+)
+
+18 
+	`©omic_öc
+(&
+cou¡î_bh
+);
+
+19 
+	`¥ötk
+(
+KERN_INFO
+
+
+21 
+	`©omic_ªad
+(&
+cou¡î_th
+),átomic_ªad(&
+cou¡î_bh
+), 
+jiffõs
+);
+
+22 
+	}
+}
+
+24 
+DECLARE_TASKLET
+(
+t_«me
+, 
+t_fun
+, 0);
+
+26 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+28 
+	`©omic_öc
+(&
+cou¡î_th
+);
+
+29 
+	`¥ötk
+(
+KERN_INFO
+ " cuºíàjiffõ†%ld\n", 
+jiffõs
+);
+
+30 
+	`èskÀt_scheduÀ
+(&
+t_«me
+);
+
+31 
+	`mdñay
+(
+dñay
+);
+
+32  
+IRQ_NONE
+;
+
+33 
+	}
+}
+
+35 
+__öô
+ 
+	$my_öô
+()
+
+37 i‡(
+ªque°_úq
+
+
+38 (
+úq
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_öãºu±", &
+my_dev_id
+))
+
+40 
+	`¥ötk
+(
+KERN_INFO
+ "SuccessfullyÜoading ISR handler\n");
+
+42 
+	}
+}
+
+44 
+__exô
+ 
+	$my_exô
+()
+
+46 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+47 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+48 
+	`¥ötk
+(
+KERN_INFO
+ " counter_th = %d, counter_bh = %d\n",
+
+49 
+	`©omic_ªad
+(&
+cou¡î_th
+),átomic_ªad(&
+cou¡î_bh
+));
+
+51 
+	`¥ötk
+(
+KERN_INFO
+ "Successfully unloading \n");
+
+52 
+	}
+}
+
+54 
+moduÀ_öô
+(
+my_öô
+);
+
+55 
+moduÀ_exô
+(
+my_exô
+);
+
+57 
+MODULE_AUTHOR
+("Team veda");
+
+58 
+MODULE_DESCRIPTION
+("Tasklet count Test");
+
+59 
+MODULE_LICENSE
+("GPL");
+
+	@tasklet_ex4.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+4 
+	~<löux/dñay.h
+>
+
+5 
+	~<löux/kî√l.h
+>
+
+7 
+	#SHARED_IRQ
+ 1
+
+	)
+
+8 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+;
+
+9 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+11 
+	gdñay
+ = 0;
+
+12 
+moduÀ_∑øm
+(
+dñay
+, , 
+S_IRUGO
+);
+
+14 
+©omic_t
+ 
+	gcou¡î_bh
+, 
+	gcou¡î_th
+;
+
+15 
+©omic_t
+ 
+	g√víts
+;
+
+16 
+©omic_t
+ 
+	gˇtchup
+;
+
+18 
+	$t_fun
+(
+t_¨g
+)
+
+20 i‡(
+	`©omic_ªad
+(&
+√víts
+) <= 0)
+
+24 
+	`©omic_öc
+(&
+cou¡î_bh
+);
+
+25 
+¥ötk
+
+
+26 (
+KERN_INFO
+
+
+28 
+	`©omic_ªad
+(&
+cou¡î_th
+),átomic_ªad(&
+cou¡î_bh
+),
+
+29 
+jiffõs
+);
+
+30 i‡(
+	`©omic_dec_™d_ã°
+(&
+√víts
+))
+
+32 
+	`©omic_öc
+(&
+ˇtchup
+);
+
+33 
+	`¥ötk
+(
+KERN_INFO
+ "******Çevents > 0, catchup=%d\n",
+
+34 
+	`©omic_ªad
+(&
+ˇtchup
+));
+
+37 
+	}
+}
+
+39 
+DECLARE_TASKLET
+(
+t_«me
+, 
+t_fun
+, 0);
+
+41 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+43 
+	`©omic_öc
+(&
+cou¡î_th
+);
+
+44 
+	`©omic_öc
+(&
+√víts
+);
+
+45 
+	`¥ötk
+(
+KERN_INFO
+ " cuºíàjiffõ†%ld\n", 
+jiffõs
+);
+
+46 
+	`èskÀt_scheduÀ
+(&
+t_«me
+);
+
+47 
+	`mdñay
+(
+dñay
+);
+
+48  
+IRQ_NONE
+;
+
+49 
+	}
+}
+
+51 
+__öô
+ 
+	$my_öô
+()
+
+53 
+	`©omic_£t
+(&
+ˇtchup
+, 0);
+
+54 
+	`©omic_£t
+(&
+√víts
+, 0);
+
+56 i‡(
+ªque°_úq
+
+
+57 (
+úq
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_öãºu±", &
+my_dev_id
+))
+
+59 
+	`¥ötk
+(
+KERN_INFO
+ "SuccessfullyÜoading ISR handler\n");
+
+61 
+	}
+}
+
+63 
+__exô
+ 
+	$my_exô
+()
+
+65 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+66 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+68 
+	`¥ötk
+(
+KERN_INFO
+ "Final statistics: catchup = %d\n",
+
+69 
+	`©omic_ªad
+(&
+ˇtchup
+));
+
+70 
+	`¥ötk
+(
+KERN_INFO
+ "Successfully unloading \n");
+
+71 
+	}
+}
+
+73 
+moduÀ_öô
+(
+my_öô
+);
+
+74 
+moduÀ_exô
+(
+my_exô
+);
+
+76 
+MODULE_AUTHOR
+("Team veda");
+
+77 
+MODULE_DESCRIPTION
+("Tasklet count Test");
+
+78 
+MODULE_LICENSE
+("GPL");
+
+	@tasklet_ex5.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+4 
+	~<löux/dñay.h
+>
+
+5 
+	~<löux/kî√l.h
+>
+
+6 
+	~<löux/¶ab.h
+>
+
+8 
+	#SHARED_IRQ
+ 19
+
+	)
+
+9 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+;
+
+10 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+12 
+	gdñay
+ = 0;
+
+13 
+moduÀ_∑øm
+(
+dñay
+, , 
+S_IRUGO
+);
+
+15 
+©omic_t
+ 
+	gcou¡î_bh
+, 
+	gcou¡î_th
+;
+
+17 
+	$t_fun
+(
+t_¨g
+)
+
+19 
+	`©omic_öc
+(&
+cou¡î_bh
+);
+
+20 
+	`¥ötk
+(
+KERN_INFO
+
+
+22 
+	`©omic_ªad
+(&
+cou¡î_th
+),átomic_ªad(&
+cou¡î_bh
+), 
+jiffõs
+);
+
+23 
+	}
+}
+
+25 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+27 
+èskÀt_°ru˘
+ *
+t_«me
+;
+
+28 
+t_«me
+ =
+
+29 (
+èskÀt_°ru˘
+ *)
+	`kmÆloc
+((tasklet_struct),
+
+30 
+GFP_ATOMIC
+);
+
+31 
+	`èskÀt_öô
+(
+t_«me
+, 
+t_fun
+, 0);
+
+32 
+	`©omic_öc
+(&
+cou¡î_th
+);
+
+33 
+	`¥ötk
+(
+KERN_INFO
+ " cuºíàjiffõ†%ld\n", 
+jiffõs
+);
+
+34 
+	`èskÀt_scheduÀ
+(
+t_«me
+);
+
+35 
+	`mdñay
+(
+dñay
+);
+
+36  
+IRQ_NONE
+;
+
+37 
+	}
+}
+
+39 
+__öô
+ 
+	$my_öô
+()
+
+41 i‡(
+ªque°_úq
+
+
+42 (
+úq
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_öãºu±", &
+my_dev_id
+))
+
+44 
+	`¥ötk
+(
+KERN_INFO
+ "SuccessfullyÜoading ISR handler\n");
+
+46 
+	}
+}
+
+48 
+__exô
+ 
+	$my_exô
+()
+
+50 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+51 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+52 
+	`¥ötk
+(
+KERN_INFO
+ " counter_th = %d, counter_bh = %d\n",
+
+53 
+	`©omic_ªad
+(&
+cou¡î_th
+),átomic_ªad(&
+cou¡î_bh
+));
+
+55 
+	`¥ötk
+(
+KERN_INFO
+ "Successfully unloading \n");
+
+56 
+	}
+}
+
+58 
+moduÀ_öô
+(
+my_öô
+);
+
+59 
+moduÀ_exô
+(
+my_exô
+);
+
+61 
+MODULE_AUTHOR
+("Team veda");
+
+62 
+MODULE_DESCRIPTION
+("Tasklet count Test");
+
+63 
+MODULE_LICENSE
+("GPL");
+
+	@tbh.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/öô.h
+>
+
+3 
+	~<löux/öãºu±.h
+>
+
+4 
+	~<löux/sched.h
+>
+
+5 
+	~<löux/kthªad.h
+>
+
+6 
+	~<löux/waô.h
+>
+
+8 
+	#SHARED_IRQ
+ 1
+
+	)
+
+9 
+	gúq
+ = 
+SHARED_IRQ
+, 
+	gmy_dev_id
+, 
+	gúq_cou¡î
+ = 0;
+
+10 
+moduÀ_∑øm
+(
+úq
+, , 
+S_IRUGO
+);
+
+12 
+DECLARE_WAIT_QUEUE_HEAD
+(
+wq
+);
+
+13 
+©omic_t
+ 
+	gc⁄d
+;
+
+14 
+èsk_°ru˘
+ *
+	gtsk
+;
+
+16 
+t_fun
+(*
+t_¨g
+);
+
+17 
+úqªtu∫_t
+ 
+	$my_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+19 
+úq_cou¡î
+++;
+
+20 
+	`¥_öfo
+("I¿thêISR: cou¡î = %d\n", 
+úq_cou¡î
+);
+
+23 
+	`©omic_£t
+(&
+c⁄d
+, 1);
+
+24 
+	`wake_up_öãºu±ibÀ
+(&
+wq
+);
+
+25  
+IRQ_NONE
+;
+
+26 
+	}
+}
+
+28 
+	$t_fun
+(*
+t_¨g
+)
+
+31 
+	`©omic_£t
+(&
+c⁄d
+, 0);
+
+34 
+	`waô_evít_öãºu±ibÀ
+(
+wq
+, 
+	`kthªad_should_°›
+()
+
+35 || 
+	`©omic_ªad
+(&
+c⁄d
+));
+
+36 
+	`¥_öfo
+("EnteringÅ_fun,Öid = %d ,context of %s\n",
+
+37 
+cuºít
+->
+pid
+, cuºít->
+comm
+);
+
+39 } !
+	`kthªad_should_°›
+());
+
+41 
+	}
+}
+
+43 
+__öô
+ 
+	$my_öô
+()
+
+45 i‡(
+ªque°_úq
+
+
+46 (
+úq
+, 
+my_öãºu±
+, 
+IRQF_SHARED
+, "my_öãºu±", &
+my_dev_id
+))
+
+52 
+tsk
+ = 
+	`kthªad_run
+(
+t_fun
+, 
+NULL
+, "mykthread");
+
+55 
+	}
+}
+
+57 
+__exô
+ 
+	$my_exô
+()
+
+59 
+	`synchr⁄ize_úq
+(
+úq
+);
+
+60 
+	`‰ì_úq
+(
+úq
+, &
+my_dev_id
+);
+
+61 
+	`kthªad_°›
+(
+tsk
+);
+
+62 
+	}
+}
+
+64 
+moduÀ_öô
+(
+my_öô
+);
+
+65 
+moduÀ_exô
+(
+my_exô
+);
+
+67 
+MODULE_AUTHOR
+("Team veda");
+
+68 
+MODULE_DESCRIPTION
+("Interrupt Handler Test");
+
+69 
+MODULE_LICENSE
+("GPL");
+
+	@/usr/include/linux/kernel.h
+
+1 #i‚de‡
+_LINUX_KERNEL_H
+
+
+2 
+	#_LINUX_KERNEL_H
+
+
+	)
+
+4 
+	~<löux/sysöfo.h
+>
+
+9 
+	#__ALIGN_KERNEL
+(
+x
+, 
+a
+Ë
+	`__ALIGN_KERNEL_MASK
+(x, (
+	`ty≥of
+(x))◊Ë- 1)
+
+	)
+
+10 
+	#__ALIGN_KERNEL_MASK
+(
+x
+, 
+mask
+Ë(((xË+ (mask)Ë& ~(mask))
+
+	)
+
+	@/usr/include/linux/sched.h
+
+1 #i‚de‡
+_LINUX_SCHED_H
+
+
+2 
+	#_LINUX_SCHED_H
+
+
+	)
+
+7 
+	#CSIGNAL
+ 0x000000f‡
+
+	)
+
+8 
+	#CLONE_VM
+ 0x00000100
+
+	)
+
+9 
+	#CLONE_FS
+ 0x00000200
+
+	)
+
+10 
+	#CLONE_FILES
+ 0x00000400
+
+	)
+
+11 
+	#CLONE_SIGHAND
+ 0x00000800
+
+	)
+
+12 
+	#CLONE_PTRACE
+ 0x00002000
+
+	)
+
+13 
+	#CLONE_VFORK
+ 0x00004000
+
+	)
+
+14 
+	#CLONE_PARENT
+ 0x00008000
+
+	)
+
+15 
+	#CLONE_THREAD
+ 0x00010000
+
+	)
+
+16 
+	#CLONE_NEWNS
+ 0x00020000
+
+	)
+
+17 
+	#CLONE_SYSVSEM
+ 0x00040000
+
+	)
+
+18 
+	#CLONE_SETTLS
+ 0x00080000
+
+	)
+
+19 
+	#CLONE_PARENT_SETTID
+ 0x00100000
+
+	)
+
+20 
+	#CLONE_CHILD_CLEARTID
+ 0x00200000
+
+	)
+
+21 
+	#CLONE_DETACHED
+ 0x00400000
+
+	)
+
+22 
+	#CLONE_UNTRACED
+ 0x00800000
+
+	)
+
+23 
+	#CLONE_CHILD_SETTID
+ 0x01000000
+
+	)
+
+24 
+	#CLONE_NEWCGROUP
+ 0x02000000
+
+	)
+
+25 
+	#CLONE_NEWUTS
+ 0x04000000
+
+	)
+
+26 
+	#CLONE_NEWIPC
+ 0x08000000
+
+	)
+
+27 
+	#CLONE_NEWUSER
+ 0x10000000
+
+	)
+
+28 
+	#CLONE_NEWPID
+ 0x20000000
+
+	)
+
+29 
+	#CLONE_NEWNET
+ 0x40000000
+
+	)
+
+30 
+	#CLONE_IO
+ 0x80000000
+
+	)
+
+35 
+	#SCHED_NORMAL
+ 0
+
+	)
+
+36 
+	#SCHED_FIFO
+ 1
+
+	)
+
+37 
+	#SCHED_RR
+ 2
+
+	)
+
+38 
+	#SCHED_BATCH
+ 3
+
+	)
+
+40 
+	#SCHED_IDLE
+ 5
+
+	)
+
+41 
+	#SCHED_DEADLINE
+ 6
+
+	)
+
+44 
+	#SCHED_RESET_ON_FORK
+ 0x40000000
+
+	)
+
+49 
+	#SCHED_FLAG_RESET_ON_FORK
+ 0x01
+
+	)
+
+	@/usr/include/linux/wait.h
+
+1 #i‚de‡
+_LINUX_WAIT_H
+
+
+2 
+	#_LINUX_WAIT_H
+
+
+	)
+
+4 
+	#WNOHANG
+ 0x00000001
+
+	)
+
+5 
+	#WUNTRACED
+ 0x00000002
+
+	)
+
+6 
+	#WSTOPPED
+ 
+WUNTRACED
+
+
+	)
+
+7 
+	#WEXITED
+ 0x00000004
+
+	)
+
+8 
+	#WCONTINUED
+ 0x00000008
+
+	)
+
+9 
+	#WNOWAIT
+ 0x01000000
+
+	)
+
+11 
+	#__WNOTHREAD
+ 0x20000000
+
+	)
+
+12 
+	#__WALL
+ 0x40000000
+
+	)
+
+13 
+	#__WCLONE
+ 0x80000000
+
+	)
+
+16 
+	#P_ALL
+ 0
+
+	)
+
+17 
+	#P_PID
+ 1
+
+	)
+
+18 
+	#P_PGID
+ 2
+
+	)
+
+	@/usr/include/linux/sysinfo.h
+
+1 #i‚de‡
+_LINUX_SYSINFO_H
+
+
+2 
+	#_LINUX_SYSINFO_H
+
+
+	)
+
+4 
+	~<löux/ty≥s.h
+>
+
+6 
+	#SI_LOAD_SHIFT
+ 16
+
+	)
+
+7 
+	ssysöfo
+ {
+
+8 
+__kî√l_l⁄g_t
+ 
+	mu±ime
+;
+
+9 
+__kî√l_ul⁄g_t
+ 
+	mlﬂds
+[3];
+
+10 
+__kî√l_ul⁄g_t
+ 
+	mtŸÆøm
+;
+
+11 
+__kî√l_ul⁄g_t
+ 
+	m‰ìøm
+;
+
+12 
+__kî√l_ul⁄g_t
+ 
+	msh¨edøm
+;
+
+13 
+__kî√l_ul⁄g_t
+ 
+	mbuf„ºam
+;
+
+14 
+__kî√l_ul⁄g_t
+ 
+	mtŸÆsw≠
+;
+
+15 
+__kî√l_ul⁄g_t
+ 
+	m‰ìsw≠
+;
+
+16 
+__u16
+ 
+	m¥ocs
+;
+
+17 
+__u16
+ 
+	m∑d
+;
+
+18 
+__kî√l_ul⁄g_t
+ 
+	mtŸÆhigh
+;
+
+19 
+__kî√l_ul⁄g_t
+ 
+	m‰ìhigh
+;
+
+20 
+__u32
+ 
+	mmem_unô
+;
+
+21 
+	m_f
+[20-2*(
+__kî√l_ul⁄g_t
+)-(
+__u32
+)];
+
+	@/usr/include/linux/types.h
+
+1 #i‚de‡
+_LINUX_TYPES_H
+
+
+2 
+	#_LINUX_TYPES_H
+
+
+	)
+
+4 
+	~<asm/ty≥s.h
+>
+
+6 #i‚de‡
+__ASSEMBLY__
+
+
+8 
+	~<löux/posix_ty≥s.h
+>
+
+16 #ifde‡
+__CHECKER__
+
+
+17 
+	#__bôwi£__
+ 
+	`__©åibuã__
+((
+bôwi£
+))
+
+	)
+
+19 
+	#__bôwi£__
+
+
+	)
+
+21 #ifde‡
+__CHECK_ENDIAN__
+
+
+22 
+	#__bôwi£
+ 
+__bôwi£__
+
+
+	)
+
+24 
+	#__bôwi£
+
+
+	)
+
+27 
+__u16
+ 
+	t__bôwi£
+ 
+	t__À16
+;
+
+28 
+__u16
+ 
+	t__bôwi£
+ 
+	t__be16
+;
+
+29 
+__u32
+ 
+	t__bôwi£
+ 
+	t__À32
+;
+
+30 
+__u32
+ 
+	t__bôwi£
+ 
+	t__be32
+;
+
+31 
+__u64
+ 
+	t__bôwi£
+ 
+	t__À64
+;
+
+32 
+__u64
+ 
+	t__bôwi£
+ 
+	t__be64
+;
+
+34 
+__u16
+ 
+	t__bôwi£
+ 
+	t__sum16
+;
+
+35 
+__u32
+ 
+	t__bôwi£
+ 
+	t__wsum
+;
+
+46 
+	#__Æig√d_u64
+ 
+__u64
+ 
+	`__©åibuã__
+((
+	`Æig√d
+(8)))
+
+	)
+
+47 
+	#__Æig√d_be64
+ 
+__be64
+ 
+	`__©åibuã__
+((
+	`Æig√d
+(8)))
+
+	)
+
+48 
+	#__Æig√d_À64
+ 
+__À64
+ 
+	`__©åibuã__
+((
+	`Æig√d
+(8)))
+
+	)
+
+	@/usr/include/asm/types.h
+
+1 #i‚de‡
+_ASM_X86_TYPES_H
+
+
+2 
+	#_ASM_X86_TYPES_H
+
+
+	)
+
+4 
+	~<asm-gíîic/ty≥s.h
+>
+
+	@/usr/include/linux/posix_types.h
+
+1 #i‚de‡
+_LINUX_POSIX_TYPES_H
+
+
+2 
+	#_LINUX_POSIX_TYPES_H
+
+
+	)
+
+4 
+	~<löux/°ddef.h
+>
+
+21 #unde‡
+__FD_SETSIZE
+
+
+22 
+	#__FD_SETSIZE
+ 1024
+
+	)
+
+25 
+	mfds_bôs
+[
+__FD_SETSIZE
+ / (8 * ())];
+
+26 } 
+	t__kî√l_fd_£t
+;
+
+29 (*
+	t__kî√l_sigh™dÀr_t
+)();
+
+32 
+	t__kî√l_key_t
+;
+
+33 
+	t__kî√l_mqd_t
+;
+
+35 
+	~<asm/posix_ty≥s.h
+>
+
+	@/usr/include/asm-generic/types.h
+
+1 #i‚de‡
+_ASM_GENERIC_TYPES_H
+
+
+2 
+	#_ASM_GENERIC_TYPES_H
+
+
+	)
+
+6 
+	~<asm-gíîic/öt-Œ64.h
+>
+
+	@/usr/include/asm/posix_types.h
+
+1 #ifde‡
+__i386__
+
+
+2 
+	~<asm/posix_ty≥s_32.h
+>
+
+3 #ñi‡
+deföed
+(
+__ILP32__
+)
+
+4 
+	~<asm/posix_ty≥s_x32.h
+>
+
+6 
+	~<asm/posix_ty≥s_64.h
+>
+
+	@/usr/include/linux/stddef.h
+
+	@/usr/include/asm-generic/int-ll64.h
+
+8 #i‚de‡
+_ASM_GENERIC_INT_LL64_H
+
+
+9 
+	#_ASM_GENERIC_INT_LL64_H
+
+
+	)
+
+11 
+	~<asm/bô•îl⁄g.h
+>
+
+13 #i‚de‡
+__ASSEMBLY__
+
+
+19 
+__sig√d__
+ 
+	t__s8
+;
+
+20 
+	t__u8
+;
+
+22 
+__sig√d__
+ 
+	t__s16
+;
+
+23 
+	t__u16
+;
+
+25 
+__sig√d__
+ 
+	t__s32
+;
+
+26 
+	t__u32
+;
+
+28 #ifde‡
+__GNUC__
+
+
+29 
+__exãnsi⁄__
+ 
+__sig√d__
+ 
+	t__s64
+;
+
+30 
+__exãnsi⁄__
+ 
+	t__u64
+;
+
+32 
+__sig√d__
+ 
+	t__s64
+;
+
+33 
+	t__u64
+;
+
+	@/usr/include/asm/posix_types_32.h
+
+1 #i‚de‡
+_ASM_X86_POSIX_TYPES_32_H
+
+
+2 
+	#_ASM_X86_POSIX_TYPES_32_H
+
+
+	)
+
+10 
+	t__kî√l_mode_t
+;
+
+11 
+	#__kî√l_mode_t
+ 
+__kî√l_mode_t
+
+
+	)
+
+13 
+	t__kî√l_ùc_pid_t
+;
+
+14 
+	#__kî√l_ùc_pid_t
+ 
+__kî√l_ùc_pid_t
+
+
+	)
+
+16 
+	t__kî√l_uid_t
+;
+
+17 
+	t__kî√l_gid_t
+;
+
+18 
+	#__kî√l_uid_t
+ 
+__kî√l_uid_t
+
+
+	)
+
+20 
+	t__kî√l_ﬁd_dev_t
+;
+
+21 
+	#__kî√l_ﬁd_dev_t
+ 
+__kî√l_ﬁd_dev_t
+
+
+	)
+
+23 
+	~<asm-gíîic/posix_ty≥s.h
+>
+
+	@/usr/include/asm/posix_types_64.h
+
+1 #i‚de‡
+_ASM_X86_POSIX_TYPES_64_H
+
+
+2 
+	#_ASM_X86_POSIX_TYPES_64_H
+
+
+	)
+
+10 
+	t__kî√l_ﬁd_uid_t
+;
+
+11 
+	t__kî√l_ﬁd_gid_t
+;
+
+12 
+	#__kî√l_ﬁd_uid_t
+ 
+__kî√l_ﬁd_uid_t
+
+
+	)
+
+14 
+	t__kî√l_ﬁd_dev_t
+;
+
+15 
+	#__kî√l_ﬁd_dev_t
+ 
+__kî√l_ﬁd_dev_t
+
+
+	)
+
+17 
+	~<asm-gíîic/posix_ty≥s.h
+>
+
+	@/usr/include/asm/posix_types_x32.h
+
+1 #i‚de‡
+_ASM_X86_POSIX_TYPES_X32_H
+
+
+2 
+	#_ASM_X86_POSIX_TYPES_X32_H
+
+
+	)
+
+13 
+	t__kî√l_l⁄g_t
+;
+
+14 
+	t__kî√l_ul⁄g_t
+;
+
+15 
+	#__kî√l_l⁄g_t
+ 
+__kî√l_l⁄g_t
+
+
+	)
+
+17 
+	~<asm/posix_ty≥s_64.h
+>
+
+	@/usr/include/asm-generic/posix_types.h
+
+1 #i‚de‡
+__ASM_GENERIC_POSIX_TYPES_H
+
+
+2 
+	#__ASM_GENERIC_POSIX_TYPES_H
+
+
+	)
+
+4 
+	~<asm/bô•îl⁄g.h
+>
+
+13 #i‚de‡
+__kî√l_l⁄g_t
+
+
+14 
+	t__kî√l_l⁄g_t
+;
+
+15 
+	t__kî√l_ul⁄g_t
+;
+
+18 #i‚de‡
+__kî√l_öo_t
+
+
+19 
+__kî√l_ul⁄g_t
+ 
+	t__kî√l_öo_t
+;
+
+22 #i‚de‡
+__kî√l_mode_t
+
+
+23 
+	t__kî√l_mode_t
+;
+
+26 #i‚de‡
+__kî√l_pid_t
+
+
+27 
+	t__kî√l_pid_t
+;
+
+30 #i‚de‡
+__kî√l_ùc_pid_t
+
+
+31 
+	t__kî√l_ùc_pid_t
+;
+
+34 #i‚de‡
+__kî√l_uid_t
+
+
+35 
+	t__kî√l_uid_t
+;
+
+36 
+	t__kî√l_gid_t
+;
+
+39 #i‚de‡
+__kî√l_su£c⁄ds_t
+
+
+40 
+__kî√l_l⁄g_t
+ 
+	t__kî√l_su£c⁄ds_t
+;
+
+43 #i‚de‡
+__kî√l_daddr_t
+
+
+44 
+	t__kî√l_daddr_t
+;
+
+47 #i‚de‡
+__kî√l_uid32_t
+
+
+48 
+	t__kî√l_uid32_t
+;
+
+49 
+	t__kî√l_gid32_t
+;
+
+52 #i‚de‡
+__kî√l_ﬁd_uid_t
+
+
+53 
+__kî√l_uid_t
+ 
+	t__kî√l_ﬁd_uid_t
+;
+
+54 
+__kî√l_gid_t
+ 
+	t__kî√l_ﬁd_gid_t
+;
+
+57 #i‚de‡
+__kî√l_ﬁd_dev_t
+
+
+58 
+	t__kî√l_ﬁd_dev_t
+;
+
+65 #i‚de‡
+__kî√l_size_t
+
+
+66 #i‡
+__BITS_PER_LONG
+ != 64
+
+67 
+	t__kî√l_size_t
+;
+
+68 
+	t__kî√l_ssize_t
+;
+
+69 
+	t__kî√l_±rdiff_t
+;
+
+71 
+__kî√l_ul⁄g_t
+ 
+	t__kî√l_size_t
+;
+
+72 
+__kî√l_l⁄g_t
+ 
+	t__kî√l_ssize_t
+;
+
+73 
+__kî√l_l⁄g_t
+ 
+	t__kî√l_±rdiff_t
+;
+
+77 #i‚de‡
+__kî√l_fsid_t
+
+
+79 
+	mvÆ
+[2];
+
+80 } 
+	t__kî√l_fsid_t
+;
+
+86 
+__kî√l_l⁄g_t
+ 
+	t__kî√l_off_t
+;
+
+87 
+	t__kî√l_loff_t
+;
+
+88 
+__kî√l_l⁄g_t
+ 
+	t__kî√l_time_t
+;
+
+89 
+__kî√l_l⁄g_t
+ 
+	t__kî√l_˛ock_t
+;
+
+90 
+	t__kî√l_timî_t
+;
+
+91 
+	t__kî√l_˛ockid_t
+;
+
+92 * 
+	t__kî√l_ˇddr_t
+;
+
+93 
+	t__kî√l_uid16_t
+;
+
+94 
+	t__kî√l_gid16_t
+;
+
+	@/usr/include/asm/bitsperlong.h
+
+1 #i‚de‡
+__ASM_X86_BITSPERLONG_H
+
+
+2 
+	#__ASM_X86_BITSPERLONG_H
+
+
+	)
+
+4 #i‡
+deföed
+(
+__x86_64__
+Ë&& !deföed(
+__ILP32__
+)
+
+5 
+	#__BITS_PER_LONG
+ 64
+
+	)
+
+7 
+	#__BITS_PER_LONG
+ 32
+
+	)
+
+10 
+	~<asm-gíîic/bô•îl⁄g.h
+>
+
+	@/usr/include/asm-generic/bitsperlong.h
+
+1 #i‚de‡
+__ASM_GENERIC_BITS_PER_LONG
+
+
+2 
+	#__ASM_GENERIC_BITS_PER_LONG
+
+
+	)
+
+11 #i‚de‡
+__BITS_PER_LONG
+
+
+12 
+	#__BITS_PER_LONG
+ 32
+
+	)
+
+	@
+1
+.
+1
+/usr/include
+26
+643
+inttest.c
+inttest1.c
+intthread.c
+tasklet_ex.c
+tasklet_ex2.c
+tasklet_ex3.c
+tasklet_ex4.c
+tasklet_ex5.c
+tbh.c
+/usr/include/linux/kernel.h
+/usr/include/linux/sched.h
+/usr/include/linux/wait.h
+/usr/include/linux/sysinfo.h
+/usr/include/linux/types.h
+/usr/include/asm/types.h
+/usr/include/linux/posix_types.h
+/usr/include/asm-generic/types.h
+/usr/include/asm/posix_types.h
+/usr/include/linux/stddef.h
+/usr/include/asm-generic/int-ll64.h
+/usr/include/asm/posix_types_32.h
+/usr/include/asm/posix_types_64.h
+/usr/include/asm/posix_types_x32.h
+/usr/include/asm-generic/posix_types.h
+/usr/include/asm/bitsperlong.h
+/usr/include/asm-generic/bitsperlong.h

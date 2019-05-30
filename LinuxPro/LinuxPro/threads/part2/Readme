@@ -1,0 +1,7 @@
+1. What is data access race ? when does it occur ?
+2. What are atomic instructions and what are they used for ?
+3. What are Mutual Exclusion protocol's and why are they needed ?
+4. What are various types of Mutual exclusion Protocols in use ?
+5. what are locking primitives/Functions and who provides them ?
+6. What are Implications of using Locking primitives/Functions in an Application ?
+7. What are semaphores ? what are they used for ?

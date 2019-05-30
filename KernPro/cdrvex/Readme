@@ -1,0 +1,28 @@
+ioctl Drv Documentation
+
+CMD 			ARGTYPE			DIR
+DRV_CMD			struct abc		in
+DRV_CMD1		struct xyz		out
+DRV_CMD2		NULL			N/A
+
+
+--------------------------------------------------------
+int main()
+{
+	const struct xyz x;
+	----
+	int a = 0;
+	ioctl(fd, DRV_CMD, &a);
+	return 0;
+
+}
+
+drv_ioctl()
+{
+	switch(cmd)
+	
+	case DRV_CMD:
+			copy_from_user(buf, a, sizeof(struct abc));
+
+
+}

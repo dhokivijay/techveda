@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/modules/tfunc.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/modules/tfunc.ko /home/dhokivij/KernPro/modules/tfunc.o /home/dhokivij/KernPro/modules/tfunc.mod.o ;  true

@@ -1,0 +1,62 @@
+Linux File I/O models
+---------------------------------------------------------------------------------------------------------------------------
+
+
+1. standard I/O : I/O ops rely on file buffer cache, read returns data from I/O cache, write returns 
+		  after updating I/O cache.
+
+Limitations:   Apps write ops are not guaranteed to be synchorized to disk.
+
+
+2. Direct I/O: O_DIRECT flag
+         transfer file data directly to application allocated I/O cache (user mode)
+setup :  step 1: Allocate sector aligned buffer (posix_memalign)
+	 step 2: Open file descripter with O_DIRECT.
+	 step 3: use mem aligned buffer with read and write operations.
+	
+
+3. Synchronized I/O
+		Request each write operation to update file region on disk
+		.write operations return only after disk is updated
+
+Limitation: I/O  transfers ops could cause application execution delays.
+
+
+4. read_ahead I/O--- posix_fadvise()
+	Application can announce its file access pattern for filesystem to enable appropriate
+	data pre-fetch settings on block driver
+
+
+5. vectored I/O--- readv/writev
+		I/O transfers from application  to kernel using multiple buffers.
+
+6. Memory mapped I/O---- mmap/unmap
+		Allows applications to map file buffer to address space
+usage: 	    step 1: acquire file descriptor 
+	    step 2: invoke mmap and request region of file to be mapped
+	    step 3: using mmap return address access file buffer
+	    step 4: initiate disk sync if mapping is map_shared
+	    step 5: unmap file buffer using unmap call
+
+man pages
+          mmap, unmap, mrealloc, mprotect, madvise
+
+ 7. I/O multiplexing--- select, poll
+	--- allows applications to watch/moniter a file descriptor for a specific event
+	--- prevents applications from blocking on a file descriptor 
+	
+usage --- select
+
+	step 1: group file descriptors into FD_SET instances as per event
+	step 2: Invoke select to setup watch
+	step 3: check return status for each File descriptor and step into I/O op if ready
+man page:
+		#man 2 select
+
+usage ---Poll
+		
+	step 1: create pollfd instance and store file descriptor, event to be monitored
+	step 2: invoke poll to setup watch
+	step 3: check revents field of pollfd instance for each descriptor.
+
+	#man 2 poll

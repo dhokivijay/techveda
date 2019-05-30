@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/KernPro/modules/myhello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/KernPro/modules/myhello.ko /home/dhokivij/KernPro/modules/myhello.o /home/dhokivij/KernPro/modules/myhello.mod.o ;  true

@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/veda/tasklet.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/veda/tasklet.ko /home/dhokivij/veda/tasklet.o /home/dhokivij/veda/tasklet.mod.o ;  true

@@ -1,0 +1,1 @@
+cmd_/home/dhokivij/veda/myhello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/dhokivij/veda/myhello.ko /home/dhokivij/veda/myhello.o /home/dhokivij/veda/myhello.mod.o ;  true

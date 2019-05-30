@@ -1,0 +1,1 @@
+cmd_/home/lkd/day4/netdrv/netdevtransmit.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.0.0-24-generic/scripts/module-common.lds --build-id  -o /home/lkd/day4/netdrv/netdevtransmit.ko /home/lkd/day4/netdrv/netdevtransmit.o /home/lkd/day4/netdrv/netdevtransmit.mod.o

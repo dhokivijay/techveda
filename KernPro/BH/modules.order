@@ -1,0 +1,4 @@
+kernel//home/dhokivij/KernPro/BH/timer2.ko
+kernel//home/dhokivij/KernPro/BH/wqshared.ko
+kernel//home/dhokivij/KernPro/BH/wqpriv.ko
+kernel//home/dhokivij/KernPro/BH/wqnewi.ko

@@ -1,0 +1,4 @@
+./jpghand.so
+./gifhand.so
+./tifhand.so
+./bmphand.so

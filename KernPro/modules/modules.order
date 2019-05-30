@@ -1,0 +1,8 @@
+kernel//home/dhokivij/KernPro/modules/myhello.ko
+kernel//home/dhokivij/KernPro/modules/modex.ko
+kernel//home/dhokivij/KernPro/modules/moddep1.ko
+kernel//home/dhokivij/KernPro/modules/modparam.ko
+kernel//home/dhokivij/KernPro/modules/modexfunc.ko
+kernel//home/dhokivij/KernPro/modules/tfunc.ko
+kernel//home/dhokivij/KernPro/modules/modcounter.ko
+kernel//home/dhokivij/KernPro/modules/moddep1.ko

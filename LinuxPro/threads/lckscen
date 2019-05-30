@@ -1,0 +1,140 @@
+Guess Results 
+
+1.
+ 
+        Thr1                            Thr2
+
+        pthread_mutex_lock(&mtx);       /*some code */
+        /* critical code  */            pthread_mutex_unlock(&mtx);
+        pthread_mutex_unlock(&mtx);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.      
+	thr_start(..)
+	{
+        pthread_mutex_lock(&mtx);         
+        func();                         
+        func1();                        
+        pthread_mutex_unlock(&mtx);
+	....
+	...
+	
+	}
+	
+	func()
+	{
+		pthread_mutex_lock(&mtx);
+		/* some code */
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. 	   pthread_mutex_lock(&mtx);
+                /* critical code */
+                ret = func();
+                if (ret < 0)
+                        exit(1);
+           pthread_mutex_unlock(&mtx);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.
+          Thr1                                   Thr2
+    pthread_mutex_lock(&A);             pthread_mutex_lock(&B);
+        pthread_mutex_lock(&B);                 pthread_mutex_lock(&A);
+
+        /* cricitical code */                   /*cricitcal code */
+        pthread_mutex_unlock(&B);               pthread_mutex_unlock(&A);
+        pthread_mutex_unlock(&A);               pthread_mutex_unlock(&B);
+
+
+
+
+
+
+
+
+
+
+
+
+5.  pthread_mutex_lock(&A);
+       ret = func();
+    pthread_mutex_unlock(&A);
+    pthread_mutex_unlock(&A); 
+
+
+
+
+

@@ -1,0 +1,16 @@
+Real Time clock commands (as per cmos-rtc data sheet):
+
+	SECOND         0x00  //Second       (00..59) 
+	MINUTE         0x02  //Minute       (00..59)
+	HOUR           0x04  //Hour         (00..23) 
+	DAY_IN_WEEK    0x06  //Day of week  (01..07)
+	DAY            0x07  //Day          (01..31) 
+	MONTH          0x08  //Month        (01..12) 
+	YEAR           0x09  //Year         (00..99) 
+
+Address mapping (IBM PC STANDARD) details :
+
+ADDRESS_REG       0x70
+DATA_REG          0x71
+ADDRESS_REG_MASK  0xe0
+
